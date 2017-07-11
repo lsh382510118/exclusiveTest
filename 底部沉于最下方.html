@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta charset="utf-8" />
+<title>锚点-test</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//console.info('屏幕高度：'+ winH+';底部高度：' +bottomH+';底部距上：' + bottomT);
+		//console.info(winH-bottomH);
+	bottomPos();
+	//窗口变化事件-更新箭头位置
+	window.onresize=function(){ 
+		bottomPos();
+    }
+	function bottomPos(){
+	/*	var winH=$(window).height();
+		var bottomT=$('.bottom').position().top;
+		var bottomH=$('.bottom').height();*/
+	/*	console.info('屏幕高度：'+ winH+';底部高度：' +bottomH+';底部距上：' + bottomT);
+		if((winH-bottomH)>bottomT){
+				$('.bottom').css('position','fixed').css('bottom','0').css('left','0');
+				console.info('fixed');
+			}else{
+				$('.bottom').css('position','static');
+				console.info('static');
+		} */
+	var containerH=$('.container').height();
+	var winH=$(window).height();
+	var headerH=$('.header').height();
+	var bottomH=$('.bottom').height();
+	if((winH-headerH-bottomH-60)>containerH){
+		$('.bottom').css('position','fixed').css('bottom','0').css('left','0');
+	}else{
+		$('.bottom').css('position','static');
+		}
+		console.info(winH-headerH-bottomH-containerH);
+		console.info('屏幕高度：'+ winH+';头部高度：' +headerH+';底部高度：' +bottomH+';中间高度：'+containerH);
+	}
+})
+
+</script>
+<style type="text/css">
+html,body{
+	height: 100%;
+}
+*{
+	padding: 0;
+	margin: 0;
+	font-family: '微软雅黑';
+}
+li{
+	list-style-type:none;
+}
+.header{
+	height: 88px;
+	background: #9961ec;
+}
+.bottom{
+	height: 50px;
+	width: 100%;
+	background-color: #444;
+	/*position:fixed;*/
+}
+.container{
+	margin:30px;
+	border:1px solid #e5e5e5;
+}
+.container li{
+	border-bottom: 1px solid #e5e5e5;
+	text-align: center;
+	color: #ac2aa1;
+	padding: 20px;
+	/*height: 100px;
+	line-height: 100px;*/
+	font-size: 16px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="header"></div>
+<div class="container">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<!-- <li>5</li>
+		<li>6</li>
+		<li>7</li> -->
+	</ul>
+</div>
+<div class="bottom"></div>
+</body>

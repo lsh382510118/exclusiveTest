@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js"></script>
+<!--<meta name="viewport" content="width=device-width,initial-sclae=1.0,minimum-scale=1.0,maximum-scale=1.0,use-scalable=no">-->
+		<style type="text/css">
+			{
+				color: green !important;
+			}
+			.c1{
+				border-top:10px threedlightshadow solid;
+			}
+			#c1{
+					border-top:10px red solid;
+			}
+			.c1 .c2{
+				color: red;
+			}
+			.c1 p span{
+				color: blue;
+				text-transform: uppercase;
+				background-color: #ccc;
+				background-color: transparent;
+			}
+			body {
+			  /*color: #1293f8;*/
+			  background-color: #fff; }
+		</style>
+</head>
+<body>
+
+
+
+
+<div  id="a1" style="background-color:blue;">啊111111111</div>
+<div  id="a2" style="background-color:rgb(15,99,30);">啊22222222222</div>
+<button id="test1">标准驼峰写法设置</button>
+<button id="test2">自定义属性名字设置</button>
+
+
+<script type="text/javascript">
+
+
+	$.cssHooks.aaronBorderRadius = {
+		get: function(elem, computed, extra) {
+			return $.css(elem, 'borderRadius');
+		},
+		set: function(elem, value) {
+			elem.style['borderRadius'] = value;
+		}
+	};
+
+	$('#test1').click(function() {
+		$("#a1").css("borderRadius", "10px");
+	})
+
+	$('#test2').click(function() {
+		$("#a2").css("aaronBorderRadius", "20px");
+	})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<span style="margin-top: 100px;    display: block;">dnfsdnjkfnkdj</span>
+	<div class="c1" id="c1">
+		<p><span class="c2">sfdsd</span></p>
+	</div>
+
+
+	<div class="b1">
+		<span class="a1">S</span>hadow
+	</div>
+	<style type="text/css">
+		.b1{
+			padding-left: 10px;
+			text-indent: -10px;
+			margin-top: -5px;
+			background: #fff
+		}
+		.a1{
+			position: relative;
+			top: 0.55em;
+			left: -3px;
+			font-size: 60px;
+			line-height: 60px;
+		}
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+/*		body{
+			background: url(images/bg.jpg) no-repeat center;
+			background-size: contain;
+		}*/
+		p{
+			width: 800px;
+			margin: 20px auto;
+			font: 50px/2 bold fantasy;
+			background-image: url(images/bg.jpg);
+			-webkit-background-clip:text;
+			-webkit-text-fill-color:transparent;
+			-webkit-text-stroke-width:1px;
+			-webkit-text-stroke-color:#85a;
+			text-transform: capitalize;
+			-webkit-box-reflect:below 0 -webkit-linear-gradient(transparent 0 ,transparent 50%,transparent 50%, rgba(255,255,255,0.3) );
+
+			-webkit-background-clip:text;
+			-webkit-text-fill-color:transparent;
+			-webkit-text-stroke-width;
+			-webkit-text-stroke-color:#85a;
+			text-transform: capitalize;
+			-webkit-box-reflect:below 0 -webkit-linear-gradient(transparent 0,transparent 50%,rgba(255,255,255,0.4));
+		}
+		.s{
+			width: 400px;
+			overflow-x: auto;
+			overflow-y: hidden;
+
+		}
+		.s p{
+			white-space: nowrap;
+			font-size: 60px;
+		}
+	</style>
+	<p class="p"> you are the shadow in my heart,did you feel it?</p>
+	<div class="s">
+		<p>你在桥上看风景</p>
+		<p>看风景的人在楼上看你</p>
+		<p>明月装饰了你的窗子</p>
+		<p>你装饰了别人的梦</p>
+	</div>
+
+</body>
+</html>

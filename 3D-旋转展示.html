@@ -1,0 +1,74 @@
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		* { margin: 0; padding: 0}
+		.DBox{
+			height: 200px;
+			width: 200px;
+			margin:100px auto;
+			transition: all 6s;
+			transform-style: preserve-3d;
+			position: relative;
+			border: 1px solid #57dbc1;
+			animation: 10s rotate linear infinite;
+			/*transform: rotateY(0deg) rotateX(0deg);*/
+		}
+		.DBox>div{
+			width: 100%;
+			height: 100%;
+			line-height: 200px;
+			text-align: center;
+			position: absolute;
+			font-size: 20px;
+			font-family:'serif';
+			font-weight: bold;
+			color: #fff;
+		}
+		.cBox1{
+			background-color: #00c9ff;
+			transform: translateZ(100px);
+		}
+		.cBox2{
+			background-color: #6ee102;
+			transform:rotateX(90deg) translateZ(100px);
+		}
+		.cBox3{
+			background-color: #9961ec;
+			transform:rotateX(180deg)  translateZ(100px);
+		}
+		.cBox4{
+			background-color:#CC0000;
+			transform:rotateX(270deg)  translateZ(100px);
+		}
+		.cBox5{
+			background-color:#f4f201;
+			transform:rotateY(90deg)  translateZ(100px);
+		}
+		.cBox6{
+			background-color:#ff8604;
+			transform:rotateY(-90deg)  translateZ(100px);
+		}
+		.DBox:hover{
+			cursor: pointer;
+			transform: rotateX(405deg)  rotateY(405deg);
+		}
+		@keyframes rotate{
+			0%{transform: rotateX(0deg)rotateY(0deg)}
+			100%{transform: rotateX(360deg)rotateY(360deg)}
+		}
+	</style>
+</head>
+<body>
+
+<div class="DBox">
+	<div class="cBox1">1</div>
+	<div class="cBox2">2</div>
+	<div class="cBox3">3</div>
+	<div class="cBox4">4</div>
+	<div class="cBox5">5</div>
+	<div class="cBox6">6</div>
+</div>
+</body>
+</html>

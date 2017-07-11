@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>兼容IE的旋转</title>
+<style type="text/css"> 
+
+.rotate{
+	height: 200px;
+	width: 200px;
+	background-color: #333;transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.060660171779821, M12=-1.0606601717798214, M21=1.0606601717798214, M22=1.060660171779821, SizingMethod='auto expand')";
+
+}
+</style> 
+</head>
+<body>
+<div class="rotate">
+
+</div>
+
+<div style="position:absolute;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);-webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg);transform: rotate(270deg);">内容啊</div>
+</body>
+</html>

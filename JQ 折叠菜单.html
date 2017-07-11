@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<script src="js/jquery.min.js"></script>
+
+<style type="text/css"> 
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+.foldMenu-box{
+	width: 200px;
+
+}
+.foldMenu{
+	min-height: 500px;
+	background-color: #333;
+	color: #fff;
+}
+	.foldMenu li{
+
+	}
+.foldMenu-title{
+	padding: 8px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	background-color: #777;
+}
+	.foldMenu-sub{
+		height: 0;
+		overflow: hidden;
+		transition: all 1.4s;
+	}
+
+.foldMenu-sub a {
+	display: block;
+	padding: 15px 0 15px 30px;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 12px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.foldMenu-sub a:hover{
+	background-color: #444;
+}
+</style> 
+</head>
+<body>
+<div class="foldMenu-box">
+	<ul class="foldMenu">
+		<li><p class="foldMenu-title">菜单1</p>
+			<div class="foldMenu-sub open">
+				<a href="javascript:void(0)">子菜单1</a>
+				<a href="javascript:void(0)">子菜单2</a>
+				<a href="javascript:void(0)">子菜单3</a>
+			</div>
+		</li>
+		<li><p class="foldMenu-title">菜单2</p>
+			<div class="foldMenu-sub">
+				<a href="javascript:void(0)">子菜单1</a>
+				<a href="javascript:void(0)">子菜单2</a>
+				<a href="javascript:void(0)">子菜单1</a>
+			</div>
+		</li>
+		<li><p class="foldMenu-title">菜单3</p>
+			<div class="foldMenu-sub ">
+				<a href="javascript:void(0)">子菜单1</a>
+				<a href="javascript:void(0)">子菜单2</a>
+				<a href="javascript:void(0)">子菜单1</a>
+			</div>
+		</li>
+	</ul>
+</div>
+<script>
+	$('.foldMenu-title').click(function(){
+		$('.foldMenu-sub.open').removeClass('open');
+		var curSubMenu = $(this).parent('li').find('.foldMenu-sub');
+		$(curSubMenu).addClass('open');
+		var aList = $(curSubMenu).find('a');
+		var aHeigth = aList.innerHeight();
+		console.info(aHeigth);
+		var alenght = $(curSubMenu).children('a').length;
+		console.info(alenght);
+		$('.foldMenu-sub').css('height',0);
+		$(curSubMenu).css('height',aHeigth*alenght);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<style type="text/css"> 
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    font-family:'微软雅黑';
+}
+.video{
+    height:100%;
+    font-size: 0;
+    min-width: 1000px;
+    margin:auto;
+}
+.videoList{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    background-color: #666;
+    height: 100%;
+    font-size: 14px;
+    color: #fff;
+}
+.videoTitle{
+    padding: .5em 1em;
+    border-bottom:1px solid #e3e3e3;
+}
+.videoList li{
+    padding:10px 0 10px 20px;
+    font-size: 12px;
+}
+.videoList li:hover{
+    background-color: #999;
+    cursor: pointer;
+}
+.videoList li.on{
+    background: #fff;
+    color: #333;
+}
+.videoScreen{
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    height: 100%;
+}
+</style> 
+</head>
+<body>
+<div class="video">
+    <div class="videoList">
+        <h2 class="videoTitle">播放列表</h2>
+        <ul id="videoList">
+            <li link="video/MyHeartWillGoOn.mp4">MyHeartWillGoOn</li>
+            <li link="video/OneMoreChance.mp4" class="on">OneMoreChance</li>
+            <li link="video/TrulyMadlyDeeply.mp4">TrulyMadlyDeeply</li>
+            <li link="video/LittleThings.mp4">LittleThings</li>
+        </ul>
+    </div>
+    <div class="videoScreen">
+        <video width="100%" height="100%" controls="controls" id="videoMainBox"  autoplay="true">
+            <source src="video/MyHeartWillGoOn.mp4" type="video/mp4"  id="videoMain"/>
+            <!--<source src="movie.ogg" type="video/ogg" />-->
+            <!--<source src="movie.webm" type="video/webm" />-->
+            <!--<object data="movie.mp4" width="320" height="240">-->
+                <!--<embed src="movie.swf" width="320" height="240" />-->
+            <!--</object>-->
+        </video>
+    </div>
+</div>
+<script>
+    var videoList = document.getElementById('videoList').getElementsByTagName('li');
+    for (var i=0;i<videoList.length;i++){
+        videoList[i].index = i;
+        videoList[i].onclick = function(){
+            linkVideo(this);
+            tabFun(this,this.index,'on');
+        }
+    }
+    var linkVideo = function (obj) {
+        var link = obj.getAttribute('link');
+        var screen = document.getElementById('videoMain');
+        var screenBox = document.getElementById('videoMainBox');
+        screen.setAttribute('src',link);
+        screenBox.load();
+        setTimeout(function(){
+            screenBox.play();
+        },100);
+    }
+    var tabFun = function(tab,index,active){
+        var parentId = tab.parentNode.id;
+        var tabList = document.getElementById(parentId).getElementsByTagName('li');
+        for(var i = 0;i<tabList.length;i++){
+            if(i == index){
+                tabList[i].className = active;
+            }else {
+                tabList[i].className = '';
+            }
+        }
+        console.info(parentId);
+    }
+</script>
+</body>
+</html>

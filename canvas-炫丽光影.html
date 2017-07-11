@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	body{
+		background: #000;
+	}
+	canvas {
+		position: relative; top:50%;
+		left:50%;
+		margin-left:-50vmin;
+		width:100vmin;
+		height:100vmin;
+		overflow:hidden;
+		display: block;
+	}
+</style> 
+</head>
+<body>
+<canvas></canvas>
+<script type="text/javascript">
+	var canvas,ctx,bgr;
+
+	window.onload=function(){
+		var a,b,c,d,iti,dt,x,y;
+		canvas = document.getElementsByTagName('canvas')[0];
+		ctx = canvas.getContext('2d');
+		canvas.width=canvas.height=400;
+		ctx.fillStyle="rgb(0,0,0)";
+		ctx.fillRect(0,0,canvas.width,canvas.height);
+		bgr=ctx.getImageData(0,0,canvas.width,canvas.height);
+
+		dt=bgr.data;
+		iti=0;
+		for(a=0;a<canvas.height;a++){
+			for(b=0;b<canvas.width;b++){
+				x=b/canvas.width-0.5;
+				y=a/canvas.height-0.5;
+				x*=2;
+				y*=2;
+				c=Math.pow(x*x+y*y,0.5)/4-0.1;
+				if(c<0)c=0;
+				d=Math.atan2(y,x)/Math.PI;
+				d=(d+1)/2;
+				d*=222;
+				d=d%2;
+				if(d>1)d=2-d;
+				c+=d*c;
+				dt[iti]=(c*50)|0;
+				iti+=4;
+			}
+		}
+		aaa();
+	};
+
+	function aaa(){
+		var a,b,c,d,e,x,y,r,tim,max,tx,ty,im,dt,iti,col,grd;
+		tim=new Date().getTime()/60;
+		ctx.putImageData(bgr,0,0);
+		ctx.globalCompositeOperation = "lighter";
+
+		grd=ctx.createLinearGradient(0,0,canvas.width,0);
+		max=400;
+		for(a=0;a<max;a++){
+			b=a/(max-1);
+			c=2+Math.sin(-tim/11+a/27)+Math.sin(tim/7+a/57);
+			grd.addColorStop(b,"rgba(255,255,255,"+(c*0.1)+")");
+		}
+		ctx.fillStyle=grd;
+		ctx.fillRect(0,0,canvas.width,canvas.height);
+
+		grd=ctx.createLinearGradient(0,0,0,canvas.height);
+		for(a=0;a<max;a++){
+			b=a/(max-1);
+			c=2+Math.sin(tim/11+a/27)+Math.sin(-tim/7+a/57);
+			grd.addColorStop(b,"rgba(255,255,255,"+(c*0.1)+")");
+		}
+		ctx.fillStyle=grd;
+		ctx.fillRect(0,0,canvas.width,canvas.height);
+
+		col=[
+			[0,0,0],[155,55,0],[0,0,0],[155,0,0],[255,195,0],[255,255,211]
+		];
+
+		tx=canvas.width/2;
+		ty=canvas.height/2;
+		for(b=0;b<13;b++){
+			tim*=1.1;
+			max=5;
+			r=tim/33;
+			c=150+Math.sin(tim/23)*120;
+			d=30+20*Math.sin(tim/19);
+			e=(70-d)*0.01;
+			for(a=0;a<max;a++){
+				x=Math.cos(r);
+				y=Math.sin(r);
+				en(tx+x*c,ty+y*c,d,e);
+				r+=Math.PI*2/max;
+			}
+		}
+
+		im=ctx.getImageData(0,0,canvas.width,canvas.height);
+		dt=im.data;
+		iti=0;
+		for(a=0;a<canvas.height;a++){
+			for(b=0;b<canvas.width;b++){
+				c=dt[iti]/256;
+				c=gra(c,col);
+				dt[iti]=c[0];
+				dt[iti+1]=c[1];
+				dt[iti+2]=c[2];
+				iti+=4;
+			}
+		}
+		ctx.putImageData(im,0,0);
+		requestAnimationFrame(aaa);
+	}
+
+	function gra(atai,col){
+		var a,b,c;
+		atai=atai%1;
+		if(atai<0)atai+=1;
+		atai*=col.length;
+		a=atai%1;
+		a=0.5-Math.cos(a*Math.PI)/2;
+		b=1-a;
+		c=atai|0;
+		d=c+1;
+		if(d>=col.length-1)d=col.length-1;
+		c1=col[c][0]*b+col[d][0]*a;
+		c2=col[c][1]*b+col[d][1]*a;
+		c3=col[c][2]*b+col[d][2]*a;
+		return [(c1)|0,(c2)|0,(c3)|0];
+	}
+
+	function en(x,y,han,lit){
+		var grd;
+		grd=ctx.createRadialGradient(x,y,0,x,y,han);
+		grd.addColorStop(0,"rgba(255,255,255,"+lit+")");
+		grd.addColorStop(1,"rgba(0,0,0,0)");
+		ctx.fillStyle=grd;
+		ctx.beginPath();
+		ctx.arc(x,y,han,0,Math.PI*2,0);
+		ctx.fill();
+	}
+</script>
+</body>
+</html>

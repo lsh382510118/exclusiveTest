@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+
+<style type="text/css"> 
+*{
+	padding: 0;
+	margin: 0;
+}
+.clearFix{
+	clear: both;
+}
+.mainC-r{
+	width:290px; 
+	float:right; 
+}
+.mainC-l{
+	margin-right:300px; 
+}
+.mainB-l{
+	width:270px; 
+	float:left; 
+}
+.mainB-r{
+	margin-left:300px;
+}
+	/*以上为布局样式*/
+
+
+	/*以下为展示样式-美化(看的爽一点而已,对布局没什么影响)*/
+.mainCont{
+		margin-top: 10px;
+	}
+.mainC-r{
+	background-color:#96bace;
+	padding: 100px 0;
+	color: #fff;
+	text-align: center;
+}
+.mainC-l{
+	background-color:#f8f8f8;
+	color: #fff;
+	text-align: center;
+}
+
+.mainB-l{	
+	background-color:#96bace;
+	padding: 20px 0;
+	line-height: 400px;
+	padding: 10px;
+}
+.mainB-r{
+	background-color:#888;
+	padding: 10px;
+	line-height: 160px;
+}
+.mainT{
+	height: 60px;
+	line-height: 60px;
+	background-color: #bbb;
+}
+.mainB{
+	margin-top: 10px
+}
+.clear:after{
+	clear: both;
+	content: '';
+	display: table;
+}
+</style>
+</head>
+<body>
+<div class="header" style="background-color: #33e4f4; text-align: center; font-size: 33px;color:#fff;padding:15px 10px">float-左中右布局</div>
+
+
+
+
+	<div class="mainCont"> 
+       <div class="mainC-r">右侧</div>
+
+       <div class="mainC-l clear">
+			<div class="mainT">mainT</div>
+			<div class="mainB" style="">
+				<div class="mainB-l">左边固定</div>
+				<div class="mainB-r">
+					main
+				</div>
+       			<div class="clearFix"></div>
+			</div>
+       </div>
+       <div class="clearFix"></div>
+    </div>
+
+
+
+
+
+
+
+	<div style="background-color: #33ffa6; text-align: center; font-size: 33px;color:#fff;margin-top: 10px"> footer</div>
+</body>
+</html>

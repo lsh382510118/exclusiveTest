@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- 头部（高度50px），左侧（宽度200px），底部（25px），主内容（自适应），块间距离（5px）。 -->
+    <style>
+        html,body{
+        	height: 100%;
+        	padding: 0;
+        	margin: 0
+        }
+        .page{
+        	position: relative;
+        	height: 100%;
+        	min-width: 1000px;
+        	margin: auto;
+        }
+        .top{
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	right: 0;
+        	height: 50px;
+        	text-align: center;
+        	line-height: 50px;
+        	background-color: #999;
+        }
+        .side{
+        	position: absolute;
+        	top: 55px;
+        	bottom: 30px;
+        	left: 0;
+        	width: 200px;
+        	background-color: #999;
+        }
+        .main{
+        	position: absolute;
+        	left:205px;
+        	right: 0;
+        	top: 55px;
+        	bottom: 30px;
+        	background-color: #ccc;
+        }
+        .footer{
+        	position: absolute;
+        	height: 25px;
+        	bottom: 0;
+        	left: 0;
+        	right: 0;
+        	background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+	<div class="page">
+		<div class="top">头部</div>
+		<div class="side">侧边栏</div>
+		<div class="main">主内容区</div>
+		<div class="footer">底栏</div>
+	</div>
+</body>
+
+</html>

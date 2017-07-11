@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>3D-旋转测试</title>
+<!-- <link rel="stylesheet" type="text/css" href="css/css.css"> -->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.dpib div').each(function(index, element){
+		$(this).on('click',function(){
+			var a = $(this).position().top;
+			console.info(a);
+		})
+	})
+
+})
+</script>
+<style type="text/css">
+.nav-box{
+	height: 200px;
+	width: 600px;
+	margin: 10px auto;
+	position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .6s;
+    transition: transform .6s;
+    cursor: pointer;
+}
+.p1{
+
+    display: block;
+    position: absolute;
+    top: 0;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.5);
+    -webkit-transform: translateZ(100px);
+    transform: translateZ(100px);
+    transition: all .6s;
+    width: 600px;
+    height: 200px;
+    opacity: 1;
+}
+.nav-box:hover .p1{
+    box-shadow: none;
+    border-radius: 15px;
+    opacity: 0;}
+.nav-box:hover .p2{        
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.p2{
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 200px;
+    width: 600px;
+    text-align: left;
+    border-radius: 15px;
+    box-shadow: none;
+    background: rgb(236,241,244);
+    -webkit-transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(100px);
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+.nav-box:hover{
+    -webkit-transform: translateZ(-50px) rotateX(90deg);
+    transform: translateZ(-50px) rotateX(90deg);
+}
+</style>
+</head>
+
+<body>
+<div class="nav-box">
+	<img src="images/1.jpg" class="p1">
+	<img src="images/2.jpg" class="p2" style="/*display:none*/">
+</div>
+</body>
+</html>

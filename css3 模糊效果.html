@@ -1,0 +1,98 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8">  
+<style type="text/css">
+    body,html{margin:0;padding:0;overflow:hidden}
+    #content{position:relative;margin:0 auto;overflow:hidden}
+    #blur{position:absolute;margin:0 auto;left:0;top:0;filter:blur(10px);-webkit-filter:blur(18px);-moz-filter:blur(18px);-ms-filter:blur(18px);-o-filter:blur(18px);z-index:0;display:block}
+    #canvas{position:absolute;margin:0 auto;left:0;top:0;z-index:1;display:block}
+    .button{padding:5px 10px;color:#fff;position:absolute;display:block;text-align:center;border-radius:4px;text-decoration:none;z-index:3}
+    #button-reset{left:10%;bottom:5%;background-color:red}
+    #button-show{right:10%;bottom:5%;background-color:green}
+</style>
+</head>  
+<body>  
+    <div id="content">
+    <!--模糊图片-->
+    <img id="blur" src="images/1.png">
+    <!--使用canvas绘制图片-->
+    <canvas id="canvas"></canvas>
+    <a href="javascript:reset()" rel="external nofollow"  class="button" id="button-reset">reset</a>
+    <a href="javascript:show()" rel="external nofollow"  class="button" id="button-show">show</a>
+    </div>
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript">
+var canWidth = window.innerWidth-20;
+var canHeight = window.innerHeight-20;
+
+var canvas=document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+canvas.width = canWidth;
+canvas.height = canHeight;
+var img = new Image();
+img.src = "images/1.png";
+var radius = 50;
+var leftMargin = 0,topMargin = 0;
+img.onload = function(){
+//初始化父容器的宽高使窗口与canvas宽高相同
+$("#content").css({"width":canvas.width + "px","height":canvas.height + "px"});
+
+//模糊图片与canva中绘制的图片(隐藏的清楚图片)宽高相同，别忘加px，否则计算出来的只是个值，不带px
+$("#blur").css("width",img.width + "px");
+$("#blur").css("height",img.height + "px");
+
+//左边距：(图片宽高 - canvas宽高) / 2;等于一边的边距宽高
+leftMargin = (img.width - canvas.width)/2;
+topMargin = (img.height - canvas.height)/2;
+
+//模糊图片的上边距与左边距
+$("#blur").css("top", String(-topMargin) + "px");
+$("#blur").css("left", String(-leftMargin) + "px");
+initCanvas();
+}
+function initCanvas(){
+var theleft = leftMargin < 0 ? -leftMargin : 0;
+var thetop = topMargin < 0 ? -topMargin : 0;
+//创建圆
+region = {x:Math.random() * (canvas.width-2 * radius - 2 * theleft) + radius + theleft,
+y:Math.random() * (canvas.height-2 * radius - 2 * thetop) + radius + thetop, r : radius};
+draw(img,region);
+}
+function draw(img){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.save();
+setRegion(region);
+/*绘制清楚图片，如leftMargin<0那么取0，
+图片宽度与canvas宽度哪个最小取哪个值*/
+ctx.drawImage(img, Math.max(leftMargin,0), Math.max(topMargin,0),
+Math.min(canvas.width,img.width), Math.min(canvas.height,img.height),
+leftMargin < 0 ? -leftMargin : 0, topMargin < 0 ? -topMargin : 0,
+Math.min(canvas.width,img.width),Math.min(canvas.height,img.height));
+
+ctx.restore();
+}
+function setRegion(region){
+ctx.beginPath();
+ctx.arc(region.x,region.y,region.r,0,Math.PI * 2,false);
+//进行裁减圆
+ctx.clip();
+}
+function reset(){
+initCanvas();
+}
+function show(){
+var animation = setInterval(function(){
+region.r += 20;
+if(region.r > Math.max(canvas.width,canvas.height)){
+clearInterval(animation);
+}
+draw(img,region);
+},30);
+}
+    </script>
+</body>  
+</html>  

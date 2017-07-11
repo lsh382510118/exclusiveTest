@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hoverSlideout Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/js.js"></script>
+<!-- <script src="js/rem.js"></script> -->
+<script type="text/javascript">
+$(function(){
+	// var s=$('.bbb').width();
+	// console.info(s);
+	
+	
+	$('.hvbox').each(function(){
+		$(this).hover(function(e){
+        	$(this).find($('.hvm')).css(posi($(this), e)).stop(true, true).animate({"left":0, "top":0}, 200);
+        },function(e){
+        	$(this).find($('.hvm')).stop(true, true).animate(posi($(this), e), 200);
+        });
+    });
+	
+});
+function posi(that,e){
+	var w=that.width(),
+		h=that.height(),
+		l=that.offset().left,
+		t=that.offset().top,
+		x,y,dire=0,dir={};
+		x=(e.pageX-l-w/2);
+		y=(e.pageY-t-h/2)*(-1);
+	console.info(x,y);
+	dire=Math.round((((Math.atan2(y,x)*(180/Math.PI))+180)/90)+3)%4;
+	console.info(dire);
+	switch(dire){
+		case 0:
+			dir.left=0;
+			dir.top="100%";
+			break;
+		case 1:
+			dir.left='100%';
+			dir.top=0;
+			break;
+		case 2:
+			dir.left=0;
+			dir.top="-100%";
+			break;
+		case 3:
+			dir.left='-100%';
+			dir.top=0;
+			break;}
+			return dir;
+}
+</script>
+<style type="text/css">
+.bbb{
+	background-color: #666;
+	width: 2rem;
+	height: 200px;
+	margin-left: 200px;
+}
+.bbb:after{
+	content: ' ';
+	background-color: #f00;
+	height: 0;
+}
+.dd{
+	height: 4px;
+	width: 4px;
+	display: block;
+	margin:98px auto 0	auto;
+	border-radius:50%;
+	background-color: rgba(0,0,0,.7);
+}
+.hvbox{
+	width: 300px;
+	height: 200px;
+	background-color: #7bd4f3;
+	margin:20px auto;
+	position: relative;
+	overflow: hidden;
+}
+.hvm{
+	position: absolute;;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4);
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	font-size: 20px;
+	font-weight: 2em;
+	top: 0;
+	left: -100%;
+}	
+</style>
+</head>
+<body>
+	<div class="hvbox">
+    	<span class="dd"></span>
+		<div class="hvm">我还做什么。。。</div>		
+	</div>
+ <!--	<div class="hover-slideout" hover-slideout>
+		<span class="dd"></span>
+		<h1>Hover me</h1>
+		<div class="smelly-cat" smelly-cat>
+			<br/>
+			<br/>
+			<br/>
+			<h1>Smelly Cat</h1>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<a href="http://yuanoook.com" target="_blank">Yuanoook.com</a>
+		</div>
+	</div> -->
+	<!-- <div class="bbb">sdfsd</div> -->
+</body>
+</html>

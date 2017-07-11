@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"  content="width=device-width,content="no-cache", initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<title>测试专用</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+.test-btn-box button{
+	border-radius: .3em;
+	padding: .3em 1em;
+	background-color: #ac2aa1;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+.test-btn-box button:hover{
+    box-shadow: 0px 0 5px rgba(40,40,100,.7);
+}
+.test-btn-box button.sec{
+	background-color: #9961ec;
+}
+.test-box{
+	width: 600px;
+	height: 100px;
+	border: 1px solid #9961ec;
+	margin: 10px auto 0 auto;
+	position: relative;
+    border-radius: .4em;
+    box-shadow: 0px 0 13px rgba(100,100,100,.5);
+}
+.test{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top:10px;
+	left: 0;
+	background: #ac2aa1;
+	-webkit-transition:1.2s all cubic-bezier(.85,-0.24,0,1.32);
+	/*transition: 3s all cubic-bezier(.3,2,.6,.8);*/
+}
+.test-btn-box{
+	position: absolute;
+	right: 40px;
+	bottom: 10px;
+}
+.info,.outfo{
+	height: 46px;
+	line-height: 46px;
+	display: block;
+	border: 0;
+	padding:0 .5em;
+	width: 300px;
+	margin: 10px auto;
+    border-radius: .4em;
+    box-shadow: 0px 0 13px rgba(100,100,100,.5);
+    box-sizing: border-box;
+}
+.detail-box{
+	width: 800px;
+	margin: 10px auto;
+}
+.detail-box ul{
+	width: 100%;
+	display: box;
+	display: -webkit-box;
+}
+.detail-box>ul>li{
+	box-flex: 1;
+	-webkit-box-flex:1;
+	text-align: center;
+    border-radius: .2em;
+    box-shadow: 0px 0 5px rgba(100,100,100,.7);
+    margin:0 .5em;
+}
+.switch {
+    display: inline-block;
+    width: 54px;
+    height: 31px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid #e3e3e3;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: inset 0 0 0 12px #fff;
+    cursor: pointer;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-name: switchAnimationOff;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: switchAnimationOff;
+    vertical-align: middle;
+    position: relative;
+}
+
+.switch.on {
+    border-color: #6ee102;
+    box-shadow: inset 0 0 0 15px #6ee102;
+    -webkit-animation-name: none;
+    animation-name: none;
+}
+.switch>em {
+    display: block;
+    width: 27px;
+    height: 27px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5), 0 5px 6px rgba(0,0,0,.25);
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .1s ease-in-out;
+    -webkit-animation-duration: .45s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-name: switchThumbAnimationOff;
+/*    transition: -webkit-transform .1s ease-in-out;
+    animation-duration: .45s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: switchThumbAnimationOff;*/
+    pointer-events: none;
+}
+.switch>input,.oo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-appearance: none;
+    display: block;
+    background: #e8e8e8;
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+    cursor: pointer;
+}
+.switch.on>em {
+    -webkit-transform: translate3d(23px, 0, 0);
+    -webkit-transition-duration: .2s;
+    -webkit-animation-duration: .45s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-name: switchThumbAnimation;
+/*    transform: translate3d(23px, 0, 0);
+    transition-duration: .2s;
+    animation-duration: .45s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: switchThumbAnimation;*/
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$('.switch').click(function(){
+			$('.switch').toggleClass('on');	
+			console.info();
+			$('.switch input').togg
+	});
+	$('.test-btn').click(function(){
+		$('.test').css('left','100%');
+	});
+	$('.test-btn2').click(function(){
+		$('.test').css('left','0');
+	});
+	$('')
+	$('.info').blur(function(){
+		var inpuyVal=$('.info').val();
+		var si=Math.sin(inpuyVal);
+		$('.outfo').html(si);
+	});
+});
+</script>
+</head>
+<body>
+	<div class="test-box">
+		<div class="test"></div>
+		<div class="test-btn-box">
+			<button class="test-btn">测试</button>
+			<button class="test-btn2 sec">返回</button>
+		</div>
+	</div>
+	<div style="display:none;">
+		<input type="number" class="info">
+		<div class="outfo">333</div>
+	</div>
+	<div class="detail-box">
+		<ul>
+			<li>NEMSNEMS</li>
+			<li>GUSER</li>
+			<li>NEMS</li>
+			<li>OLSDF</li>
+		</ul>
+		
+	</div>
+	<DIV style='width: 260px;margin: 30px auto'>
+		<span class="switch"><em></em>
+              <input type="checkbox" value="sleep">
+        </span>
+	</DIV>
+              <input type="checkbox" value="sleep" class="oo">
+</body>
+</html>

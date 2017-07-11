@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            border-top:1px solid transparent;
+            margin-top:-1px;
+        }
+        html,body{
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        .head-nav-wrap{
+            height: 100%;
+            width: 260px;
+            background-color: #85a;
+        }
+        .head-nav{
+            margin: 0 auto;
+        }
+        .head-nav-item{
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            padding-left: 40px;
+        }
+        .head-nav-item:hover{
+            background-color: #794b98;
+        }
+        .head-nav-panel{
+            position: relative;
+        }
+        .subnav{
+            display: none;
+            padding: 10px 0;
+            background-color: #ac78cf;
+            color: #fff;
+            font-weight: 300;
+        }
+        .head-subnav-item{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 60px;
+            transition: all 0.4s;
+            display: block;
+            color: #fff;
+        }
+        .head-subnav-item:hover{
+            padding-left: 80px;
+            font-weight: 500;
+        }
+        .head-nav-panel:target .head-nav-item{
+            background: #662493;
+        }
+        .head-nav-panel:target>.subnav{
+            display: block;
+        }
+    </style>
+    <div class="head-nav-wrap">
+        <div class="head-nav">
+            <div id="head-nav-panel1" class="head-nav-panel">
+                <a href="#head-nav-panel1" class="head-nav-item">item1</a>
+                <div class="subnav">
+                    <a href="javascript:;" class="head-subnav-item">subitem1-1</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem1-2</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem1-3</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem1-4</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem1-5</a>
+                </div>
+            </div>
+            <div id="head-nav-panel2" class="head-nav-panel">
+                <a href="#head-nav-panel2" class="head-nav-item">item2</a>
+                <div class="subnav">
+                    <a href="javascript:;" class="head-subnav-item">subitem2-1</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem2-2</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem2-3</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem2-4</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem2-5</a>
+                </div>
+            </div>
+            <div id="head-nav-panel3" class="head-nav-panel">
+                <a href="#head-nav-panel3" class="head-nav-item">item3</a>
+                <div class="subnav">
+                    <a href="javascript:;" class="head-subnav-item">subitem3-1</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem3-2</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem3-3</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem3-4</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem3-5</a>
+                </div>
+            </div>
+            <div id="head-nav-panel4" class="head-nav-panel">
+                <a href="#head-nav-panel4" class="head-nav-item">item4</a>
+                <div class="subnav">
+                    <a href="javascript:;" class="head-subnav-item">subitem4-1</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem4-2</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem4-3</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem4-4</a>
+                    <a href="javascript:;" class="head-subnav-item">subitem4-5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button>dfsd</button>
+</body>
+</html>

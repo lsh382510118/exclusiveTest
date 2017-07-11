@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="css/sctest.css"/> -->
+    <style>
+    *{
+    	padding: 0;
+    	margin: 0;
+    	box-sizing: border-box;
+    }
+    body{
+    	background-color: #f5f5f5;
+    	border-bottom: 1px solid transparent;
+    	margin-top: -1px;
+
+    }
+    </style>
+</head>
+<body>
+	<style type="text/css">
+	.pie {
+		width: 200px; height: 200px;
+		border-radius: 50%;
+		background: yellowgreen;
+		margin: 40px auto;
+		background-image:linear-gradient(to right, transparent 50%, #655 0);
+	}
+	.pie::before {
+		content: '';
+		display: block;
+		margin-left: 50%;
+		height: 100%;
+		border-radius: 0 100% 100% 0 /50%;
+		background-color: inherit;
+		transform-origin: left;
+		/*transform: rotate(0.1turn);*/
+		animation: spin 50s linear infinite,bg 100s step-end infinite;
+		animation-play-state: paused;
+		animation-delay: inherit;
+
+		}
+	@keyframes spin {
+		to { transform: rotate(.5turn); }
+	}
+	@keyframes bg {
+		50% { background: #655; }
+	}
+	</style>
+
+<div class="pie" style="animation-delay: -10s"></div>
+<div class="pie" style="animation-delay: -20s"></div>
+<div class="pie" style="animation-delay: -50s"></div>
+<div class="pie" style="animation-delay: -90s"></div>
+</body>
+</html>

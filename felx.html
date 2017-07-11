@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.flex{
+		display: flex;
+		flex-direction:row;
+		justify-content: space-around;
+		align-items: center;
+		height: 50px;
+	}
+	.it{
+		/*flex: 1;*/
+		height: 50px;
+		background-color: #444;
+		color: #fff;
+		text-align: center;
+		line-height: 50px;
+		width: 20%;
+	}
+	.it:hover{
+		background-color: #999;
+		cursor: pointer;
+	}
+	.it3{
+		height: 20px;
+		line-height: 20px;
+	}
+	.it2{
+		height: 40px;
+		line-height: 40px;
+	}
+</style>
+</head>
+<body>
+<div class="flex id="flex"">
+	<div class="it it1">1</div>
+	<div class="it it2">2</div>
+	<div class="it it3">3</div>
+	<div class="it it4">4</div>
+</div>
+<input type="text" name="someInput" placeholder="Douglas Quaid" required autofocus>
+<form action="" method="post">
+	<label for="username">.Create a Username: </label>
+	<input type="text" name="username" id="username" placeholder="4 <> 10" pattern="[A-Za-z]{4,10}" autofocus required>
+	<button type="submit">.Go </button>
+</form>
+</body>
+</html>

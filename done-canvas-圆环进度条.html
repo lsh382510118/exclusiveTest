@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>canvas-圆环进度条  Demo</title>
+<script src="js/jquery.min.js"></script>
+
+<style type="text/css"> 
+html{
+	height: 100%;
+}
+body{
+	background-color: #333;
+	min-height: 100%;
+}
+body,h1,h2,h3,h4,h5,h6,p,ol,ul{
+    margin: 0;
+}
+ol,ul{
+    padding: 0;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+em{
+    font-style:normal;
+}
+	#canvas{
+		display: block;
+		margin:30px auto;
+		color: #333;
+		border: 1px solid #e3e3e3;
+		background-color: #fff;
+		box-shadow: 0 0 5px 1px rgba(0,0,0,.17);
+		border-radius: 6px
+	}
+</style> 
+</head>
+<body>
+	<canvas id="canvas" width="400px" 	height="200px">请用点高级点的浏览器好吗？lower</canvas>
+<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var proObj = {
+		X:"",		//横坐标
+		Y:"",		//纵坐标
+		r:4,					//小圆半径
+		R:80,					//大圆半径
+		beginDeg:00,			//起始进度--unfinish
+		endDeg:84,				//结束进度
+		bgColor:"#ff8704",		//起始进度
+	}
+	progress(canvas,proObj);
+
+	 function progress(canvas,proObj){
+	 	var ctx = canvas.getContext('2d');
+	 	var beigindeg =proObj.beginDeg ? proObj.beginDeg/100 *360:0;
+		var enddeg = proObj.endDeg / 100 *360;
+		var h = parseInt(canvas.attributes["height"].value );
+		var w = parseInt(canvas.attributes["width"].value );
+		var R = proObj.R;	//大圆半径
+	 	var r = proObj.r;	//小圆半径
+		var fsz = (R-r)/3*2;
+		var circen ={	X:w/2,	Y:h/2	}//圆心
+	 	ctx.beginPath();
+		ctx.fillStyle = proObj.bgColor;
+		ctx.textAlign = "center";
+		ctx.textBaseline='top';
+		ctx.font='bold '+fsz+'px 微软雅黑';
+		var pre = setInterval(function(){
+		 	beigindeg = beigindeg + 1;
+			if(beigindeg < enddeg){
+				str =''+Math.round(beigindeg/3.6);
+				var fw =ctx.measureText(str).width;
+				ctx.beginPath();
+				var x = circen.X+R * Math.sin(beigindeg/180*Math.PI);
+				var y = circen.Y-R * Math.cos(beigindeg/180*Math.PI);
+				ctx.arc(x ,y,r,0,Math.PI * 2,true);
+				ctx.closePath();
+				ctx.fill();
+				ctx.clearRect((w-fw)/2-10,(h-fsz)/2-R/4,fw+10,fsz * 1.6);
+//				ctx.rect((w-fw)/2-10,(h-fsz)/2-19,fw+10,fsz * 1.6);
+				ctx.fill();
+				ctx.fillText(str,(w-6)/2,(h-fsz)/2-R/8,2*R-20);
+				console.info(fsz);
+			}else{
+				clearInterval(pre);
+			}
+		},10)
+	}
+
+
+</script>
+</body>
+</html>

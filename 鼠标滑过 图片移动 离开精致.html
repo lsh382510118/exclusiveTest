@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="css/sctest.css"/>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        @keyframes panoramic {
+            to { background-position: 100% 0; }
+        }
+        .panoramic {
+            width: 150px; height: 150px;
+            background: url("images/1.png");
+            background-size: auto 100%;
+            animation: panoramic 10s linear infinite alternate;
+            animation-play-state: paused;
+        }
+        .panoramic:hover, .panoramic:focus {
+            animation-play-state: running;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="panoramic">
+
+    </div>
+    <div class="path">
+        <div class="avatar">
+            <img src="images/bg.jpg" class="pic" />
+        </div>
+    </div>
+<style>
+    .path{
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        background-color: #d889f7;
+        padding: 40px 100px;
+        border-radius: 50%;
+    }
+    .pic{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    @keyframes spin {
+         to { transform: rotate(1turn); }
+     }
+    @keyframes spin-reverse {
+        from { transform: rotate(1turn); }
+    }
+    .avatar {
+        animation: spin 3s infinite linear;
+        transform-origin: 50% 150px; /* 150px = 路径的半径 */
+    }
+    .avatar > img {
+        animation: inherit;
+        animation-direction: reverse;
+        /*background-image: linear-gradient();*/
+    }
+</style>
+</body>
+
+</html>

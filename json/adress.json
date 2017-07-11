@@ -1,0 +1,15 @@
+{"adress":[
+	{"province":"s1","name":"福建省","city":[
+		{"cityname":"福州","usiness":["营业厅11","营业厅12"]},
+		{"cityname":"泉州","usiness":["营业厅21","营业厅22"]},
+		{"cityname":"厦门","usiness":["营业厅31","营业厅32"]}
+	]},
+	{"province":"s2","name":"浙江省","city":[
+		{"cityname":"宁波","usiness":["营业厅11","营业厅12"]},
+		{"cityname":"杭州","usiness":["营业厅21","营业厅22"]}
+	]},
+	{"province":"s3","name":"浙江省","city":[
+		{"cityname":"四川","usiness":["营业厅11","营业厅12","营业厅13"]}
+	]}	
+]
+}

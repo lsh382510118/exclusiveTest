@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+});
+</script> 
+<style>
+.sfq-imgbanner{
+	width: 1200px;
+	margin: 20px auto;
+	height: 160px;
+}
+.sfq-imgbanner:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.sfq-imgbanner>.banner-img{
+	width: 25%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	/*-webkit-transition: all .2s linear ;
+	transition: all .2s linear;*/
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	-webkit-background-size:cover;
+	background-size:cover;
+}
+.sfq-imgbanner>.banner-img img{
+	display: block;
+	height: 100%;
+	
+}
+.sfq-imgbanner>.banner-img.on,.sfq-imgbanner:hover .banner-img:hover{
+	width: 40%;
+	cursor: pointer;
+}
+.banner1{
+	background: url(images/1.jpg) no-repeat fixed top left;
+}
+/*.banner2{
+	background: url(images/2.jpg) no-repeat top left;
+}
+.banner3{
+	background: url(images/3.jpg) no-repeat top left;
+}
+.banner4{
+	background: url(images/4.jpg) no-repeat top left;
+}*/
+.sfq-imgbanner:hover .banner-img{
+	width: 20%;
+}
+.dd{
+	background-color: #FA8072;
+}
+.test-box{
+	margin: 10px 20px;
+	border-top: 1px solid #e3e3e3;
+	padding: 10px;
+}
+.test-box>div{
+	margin: 6px;
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	line-height: 150px;
+	vertical-align: top;
+}
+.t-p{
+	background-color: #E3E3E3;
+	color: #333;
+}
+
+</style>
+</head>
+<body>
+	<div class="sfq-imgbanner">
+		<div class="banner-img banner1"><!--<img src="images/1.jpg">--></div>
+		<div class="banner-img banner2"><img src="images/2.jpg"></div>
+		<div class="banner-img banner3"><img src="images/3.jpg"></div>
+		<div class="banner-img banner4"><img src="images/4.jpg"></div>
+	</div>
+	<div class="ap-test">
+		<div class="btn-box"><button class="btn">添加</button></div>
+		<div class="test-box">
+			<!--<div class="dd"></div>-->
+			<div class="t-p">请点击按钮插入dd</div>
+		</div>
+	</div>
+<script>
+	$('.btn').click(function(){
+		var a="<div class='dd''></div";
+		$('.test-box').append(a);
+		a.insertBefore($('.t-p'));
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+    <style>
+		input:not(:focus) + .callout {
+			transform: scale(0);
+			transition: .25s transform;
+		}
+		input:focus + .callout { animation: elastic-grow .5s; }
+		.callout {
+			transition: .5s transform ;
+			transform-origin: 1.4em -.4em;
+		}
+		@keyframes elastic-grow {
+			from { transform: scale(0); }
+			70% {
+				transform: scale(1.1);
+				animation-timing-function:
+						cubic-bezier(.1,.25,1,.25); /* 反向的ease */
+			}
+		}
+    </style>
+</head>
+<body>
+	<label class="name-wrap">
+		<p>Your username: </p>
+		<input id="username" type="password" placeholder="请输入文字"/>
+		<span class="callout">跨快快输入神奇的文字吧</span>
+	</label>
+<style>
+	.name-wrap{
+		position: relative;
+		display: block;
+	}
+	#username{
+		display: block;
+		width: 300px;
+		outline:none;
+		border:1px solid #e3e3e3;
+		border-radius: 4px;
+		height: 40px;
+		line-height:40px;
+		text-indent: 0.5em;
+	}
+	.callout{
+		position: absolute;
+		top: 80px;
+		left: 20px;
+		background-color: #fffbef;
+		padding: 0 10px 10px;
+		width: 220px;
+		border: 1px solid #fce59d;
+		border-radius: 4px;
+		transform-origin: 1.4em -.4em;
+	}
+	.callout:before{
+		content: ' ';
+		position: relative;
+		border-bottom: 10px solid #fffbef;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		display: block;
+		top: -9px;
+		left: 10px;
+		width: 10px;
+		height: 10px;
+		box-sizing: border-box;
+		filter: drop-shadow(0px -2px 0px rgba(252, 229, 157,1));
+	}
+</style>
+</body>
+
+</html>

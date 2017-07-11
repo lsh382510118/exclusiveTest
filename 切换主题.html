@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hoverSlideout Demo</title>
+
+<script src="js/jquery.min.js"></script>
+<link title="bg1" themeType='theme' rel="stylesheet" type="text/css" href="css/cssBg1.css">
+<link title="bg2" themeType='theme' rel="stylesheet" type="text/css" href="css/cssBg2.css" disabled='disabled'>
+<style type="text/css"> 
+/*	.dd{
+		height: 80px;
+		margin-top: 100px;
+		text-align: center;
+	}
+	.dd div{
+		display: inline-block;
+		width: 200px;
+		background-color: #fff;
+		margin: 0 10px;
+		height: 100%;
+		vertical-align: middle;
+	}
+	.dd div.pr{
+		position: relative;
+		left: -400px;
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		height: 60px;
+		box-shadow: 0 0 5px 2px rgba(100,100,100,.7);
+	}*/
+	html{
+		/*background-color: #fff;*/
+	}
+	body{
+		min-height: 200px;
+		/*background-color: #999;*/
+	}
+	p{
+		height: 100px;
+		/*background-color: #f8f8f8;*/
+	}
+	.btnBox{
+		text-align: center;
+		padding: 15px 10px;
+	}
+	button{
+		background: #fff;
+		padding: 0 15px;
+		line-height: 44px;
+		margin: 0 5px;
+		border-radius: 6px;
+		border: 1px solid #e3e3e3;
+		color: #333
+	}
+	button:hover{
+		background-color: #f8f8f8;
+		cursor: pointer;
+	}
+</style> 
+</head>
+<body>
+	<p></p>
+	<div class="btnBox">
+		<button class="theme" theme='bg1'>切换主题 - bg1</button>
+		<button class="theme" theme='bg2'>切换主题 - bg2</button>
+	</div>
+<script>
+	$('.theme').click(function(){
+		var themeType = $(this).attr('theme');
+		var a = $('link[themeType ="theme"]').attr('title');
+		console.info($('link[themeType ="theme"]'));
+		// console.info(themeType);
+		$('link[title ="'+themeType+'"]').removeAttr('disabled');
+		$('link[title !="'+themeType+'"]').attr('disabled','disabled');
+
+	});
+</script>
+</body>
+</html>

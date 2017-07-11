@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模拟现实文字效果</title>
+<style type="text/css">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    border-top: 1px solid transparent;
+    margin-top: -1px;
+  }
+  .text-effect{
+    width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px 1px rgba(50,50,50,0.4);
+    font-size: 20px;
+  }
+  ::selection{
+    color: #fff;
+    background-color: #63768c;
+    }
+</style>
+</head>
+<body>
+<div class="text-effect effect1">  you are my shadow in my heart,did you feel?</div>
+<style type="text/css">
+  .effect1{ 
+    text-shadow: 0 1px 1px rgba(255,255,255,.8);
+    color: #555;
+    background-color: #88a; }
+</style>
+
+<div class="text-effect effect2">  you are my shadow in my heart,did you feel?</div>
+<style type="text/css">
+  .effect2{ 
+    color: #88a;
+    background-color: #555;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8); 
+  }
+</style>
+
+<div class="text-effect effect3">  you are my shadow in my heart,did you feel?</div>
+<style type="text/css">
+  .effect3{ 
+    color: #88a;
+    font-size: 36px;
+    line-height: 1.5;
+    font-weight: bold;
+    background-color: #555;
+    transition: 1s;
+    /*color: #fff;*/
+  }
+  .effect3:hover{
+    cursor: pointer;
+    /*color: transparent;*/
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8),0 0 .1em, 0 0 .3em; 
+  }
+</style>
+<div class="text-effect effect4">  you are my shadow in my heart,did you feel?</div>
+<style type="text/css">
+  .effect4{ 
+    color: #88a;
+    font-size: 54px;
+    line-height: 1.5;
+    font-weight: bold;
+    background-color: #3e3e50;
+    transition: 0.3s;
+    color: #fff;
+  }
+  .effect4:hover{
+    cursor: pointer;
+    text-shadow: 0 1px hsl(0,0%,85%),
+                0 2px hsl(0,0%,80%),
+                0 3px hsl(0,0%,75%),
+                0 4px hsl(0,0%,70%),
+                0 5px hsl(0,0%,65%),
+                0 5px 10px black;; 
+  }
+</style>
+<div class="text-effect effect5">
+  <svg viewBox="0 0 100 100">
+    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+    <text>
+      <textPath xlink:href="#circle">
+        faded--this is my favorite song.
+      </textPath>
+    </text>
+  </svg>
+</div>
+<style type="text/css">
+  .effect5{ 
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    color: #88a;
+    font-size: 12px;
+    background-color: #3e3e50;
+    transition: 0.3s;
+    color: #7c7c96;
+    padding: 50px;
+  }
+  .effect5 text{ fill: #7c7c96; }
+  .effect5 svg path { fill: none; }
+  .effect5 svg{
+    display: block;overflow: visible;
+  }
+</style>
+</body>
+
+</html>

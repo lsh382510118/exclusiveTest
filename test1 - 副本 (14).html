@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="css/sctest.css"/> -->
+    <style>
+        *{
+            padding: 0;
+            margin: 0
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            background-color: #f6f6f6;
+        }
+        .head{
+        	background-color: #2e84cc;
+            color: #fff;
+            line-height: 80px;
+            height: 80px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .main{
+            width: 1200px;
+            margin: 15px auto;
+            background-color: #fff;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+        }
+        .userAdr{
+            height: 60px;
+            line-height: 60px;
+            font-size: 18px;
+            font-weight:normal;
+            padding: 0 20px;
+            color: #666;
+            border-bottom: 1px solid #e3e3e3;
+            /*zoom: 0;*/
+            transition:all .4s;
+        }
+        .userAdr:hover{
+            zoom: 1.2;
+        }
+        .userAdr-city{
+            position: relative;
+            display: inline-block;
+            padding-right: 20px;
+            font-size: 16px;
+        }
+        .userAdr-city:after{
+            content: '';
+            position: absolute;
+            border-top: 6px solid #999;
+            border-bottom: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            top: 50%;
+            margin-top: -3px;
+            right: 0;
+        }
+        .addressBox{
+            height: 300px;
+        }
+        .addressChoose{
+            height: 100%;
+            width: 160px;
+            border-right: 1px solid #e3e3e3;
+            overflow-y: auto;
+        }
+        .addressChoose li{
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            padding-left: 15px;
+            text-align: center;
+        }
+        .addressChoose li:hover{
+            background-color: #fafafa;
+            cursor: pointer;
+        }
+
+        ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+            width: 8px;
+            border-radius: 0px;
+            background:rgba(100,100,100,0.0);
+        }
+        ::-webkit-scrollbar:hover{
+            border-radius: 0px;
+            background:rgba(100,100,100,0.1);
+            cursor: all-scroll;
+        }
+        ::-webkit-scrollbar-thumb {
+            width: 8px;
+            border-radius: 6px;
+            background: rgba(180,180,180,0.3);
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: rgba(180,180,180,0.7);
+        }
+        .addressWrap{
+            position: relative;
+        }
+        .addressBox{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            right: 0;
+            height: 0;
+            overflow-y: hidden;
+            transition:.2s all;
+        }
+        .addressWrap:hover > .addressBox{
+            display: block;
+            cursor: pointer;
+            height: 300px;
+            box-shadow: 0 2px 4px 1px rgba(80,80,80,.3);
+        }
+        .a1{
+            margin-top: 20px;
+            background: #f8f88f;
+            height: 100px
+        }
+        body{
+            padding-bottom: 30px;
+        }
+        #bb{
+            padding:0px 20px;
+            height: 40px;
+            line-height: 40px;
+            display:block;
+            margin:10px auto;
+            text-align:center;
+        }
+        .aggggggggggg{
+            position: fixed;
+            top:100px;
+            right: 100%;
+            height: 100px;
+            width: 100px;
+            background-color: #0a90e6;
+        }
+    </style>
+</head>
+<body>
+    <div class='head'>head</div>
+    <button id='bb'>sdf</button>
+    <script type="text/javascript">
+        var bbfun = function(){
+            console.info(123);
+            console.info('event : ' + event);
+            console.info('this : ' + this);
+            console.info('this.value : ' + this.value);
+            console.info('this.innerHTML : ' + this.innerHTML);
+        }
+        var btn  = document.getElementById('bb');
+        bb.addEventListener('click',bbfun);
+    </script>
+	<div class='main'>
+        <div class='addressWrap'>
+            <h1 class='userAdr'>所在地点：<span class='userAdr-city'> 福州</span></h1> 
+            <div class='addressBox'>
+                <ul class='addressChoose addressChoose-province'>
+                    <li>北京市</li>
+                    <li>上海市</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                    <li>福建省</li>
+                </ul>
+            </div>  
+        </div>
+        <style type="text/css">
+            .sdf{
+                padding: 20px;
+                color: #999;
+                font-size: 14px;
+            }
+        </style>
+        <div class='sdf'>福建省福建省福建省福建省福建省福建省</div>
+        <div class='sdf'>福建省福建省福建省福建省福建省福建省</div>
+        <div class='sdf'>福建省福建省福建省福建省福建省福建省</div>
+        <div class='sdf'></div>
+        <div class='sdf'>福建省福建省福建省福建省福建省福建省</div>
+        <div class='sdf'>福建省福建省福建省福建省福建省福建省</div>
+    </div>
+    <div class='a1' id='a1'></div>
+    <div class='a1' id='a2'></div>
+    <div class='a1' id='a3'></div>
+    <div class='a1' id='a4'></div>
+    <div class='a2' style='white-space: nowrap;    overflow-x: auto;'>
+        <table width='100%'>
+            <tr>
+                <td>福建省福建省福建省福建省福建省福建省</td>
+                <td>福建省福建省福建省福建省福建省福建省</td>
+                <td>福建省福建省福建省福建省福建省福建省</td>
+                <td>福建省福建省福建省福建省福建省福建省</td>
+            </tr>
+        </table>
+    </div>
+    <style type="text/css">
+        .box{
+            font-size: 0;
+            width: 800px;
+            margin:10px auto;
+        }
+        .box>li{
+            width: 100px;
+            padding: 8px 20px;
+            display:inline-block;
+            _zoom:1;
+            /**display:inline; */
+            background-color: #ccc;
+            font-size: 14px;
+            text-align: center;
+            border-right: 1px  solid #f5f5f5;
+        }
+        .box>li { *display: inline }
+    </style>
+    <ul class='box'>
+       <li>1</li> 
+       <li>2</li> 
+       <li>3</li> 
+       <li>4</li> 
+       <li>5怼人</li> 
+    </ul>
+    <div id='nodeT'><p><b>bbbbbbbb</b>,aaaaaaaaaaaa</p><ul><li>asdfa</li><li>阿斯蒂芬</li><li>Atlantis</li></ul>
+    </div>
+    <script type="text/javascript">
+        // var btn  = document.getElementById('bb');
+
+
+    </script>
+    <div style='width:400px;margin:30px auto;padding-bottom:50px'>
+        <style type="text/css">
+            .asf{ 
+                margin-right: 5px;
+                vertical-align: -2px;
+                display: inline-block;
+            }
+        </style>
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <input type='checkbox' class='asf'>
+                    测试
+                </label>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div class="aggggggggggg"></div>
+</body>
+
+</html>

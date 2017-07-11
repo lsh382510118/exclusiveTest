@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<div id="div1" class="content">
+		<ul class="list">
+			<li id="li1">菜单1</li>
+			<li id="li2">菜单2</li>
+			<li id="li3">菜单3</li>
+			<li id="li4">菜单4</li>
+			<li id="li5">菜单5</li>
+		</ul>
+	</div>
+	<input type="text">
+<style type="text/css">
+	#div li{
+color: blue;
+	}
+	.content li{
+		color: red;
+	}
+	.a{
+		height: 20px;
+		background-color: #333;
+	}
+	.a + .a{
+		background-color: #888;
+	}
+	.b{
+		height: 40px;
+		background-color: #ccc;
+		position: relative;
+		margin: 20px auto;
+		color: #f8f8f8;
+	}
+	.flex{
+		display: flex;
+	}
+</style>
+<div class="b">
+	<div class="a" style="width: 100px;float: left;">l</div>
+	<div class="a" style="margin-left: 100px;">r</div>
+
+</div>
+<div class="b">
+	<div class="a" style="position: absolute;width: 100px">l</div>
+	<div class="a" style="margin-left: 100px;">r</div>
+</div>
+<div class="b">
+	<div class="a" style="width: 100px;float: left;">l</div>
+	<div class="a" style="overflow: hidden;">r</div>
+</div>
+<div class="b flex">
+	<div class="a" style="width: 100px">l</div>
+	<div class="a" style="flex: 1">r</div>
+</div>
+<div class="b">
+	<div class="a">圆角 动画 过渡  形变 投影 </div>
+	<div class="a">r</div>
+</div>
+<div class="b">
+	<div class="a">删格：个人理解就是根据需要将布局用浮动+百分比，布局   至于删格</div>
+	<div class="a">r</div>
+</div>
+
+<div class="flex" style="height: 400px;width:400px;
+margin: auto;background-color: #f5f5f5";>
+	<div style ="margin:auto;height:80px;width:80px;background-color: #333;"></div>
+</div>
+
+<div style="display: table-cell;" class="b">
+	<div class="a"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$('.list').on('click','#li1 , #li2, #li3, #li4, #li5',function(agument){
+		var a = $(this).text();
+		console.info(a);
+	})
+</script>
+</body>
+
+</html>

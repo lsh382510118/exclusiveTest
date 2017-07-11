@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script>
+window.onload=function(){
+var oCA=document.getElementById('can');
+var oDiv=document.getElementById('div1');
+var oGC=oCA.getContext('2d');
+
+
+var str=oDiv.innerHTML;
+var w=oGC.measureText(str).width;
+var h=100;
+oGC.textAlign = "center";
+oGC.textBaseline='top';
+oGC.font=h+'px impact';
+oGC.fillText(str,(oCA.width-w)/2,(oCA.height-h)/2);
+}
+</script>
+</head>
+<body>
+<canvas id="can" width="500px" height="500px" style="background:#6FA4D1;"></canvas>
+<div id="div1">
+w
+</div>
+</body>
+</html>

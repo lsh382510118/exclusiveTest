@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title></title>
+            <style>
+                body{
+            border-top:1px solid transparent;
+            margin-top:-1px;
+        }
+        figure {
+            max-width: 300px;
+            max-width: min-content;
+            margin: auto;
+        }
+        figure > img { max-width: inherit; }
+        .dd{
+            width: 800px;
+            margin:50px auto;
+        }
+        .table{
+            width: 100%;
+            border:1px solid #e3e3e3;
+            border-collapse:collapse;
+            table-layout: fixed;
+        }
+        .table td{
+            border: 1px solid #e3e3e3;
+            padding: 0 5px;
+        }
+        .mt-50{
+            margin-top: 50px;
+        }
+        .hr{
+            margin-top: 50px;
+        }
+        li{overflow:hidden;width:200px;height:21px;text-align:justify;text-align-last:justify;}
+        li:after{display:inline-block;overflow:hidden;width:100%;height:0;content:'';}
+            </style>
+        </meta>
+    </head>
+    <body>
+    <div class="bg-test">
+        asd asd asd asd asd asd asd
+    </div>
+    <style>
+        .bg-test{
+            width: 100px;
+            height: 50px;
+            margin: 50px auto;
+            /*background-color: #333;*/
+            background-color: transparent;
+        }
+    </style>
+    <hr>
+    <div class="appearance-test">
+        asd
+    </div>
+    <hr>
+<style type="text/css">
+.appearance-test{
+    height: 50px;
+    width: 200px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+    h2,h3 {margin:0;padding:0.8em 0;}
+p {margin:0;pading:5px 10px;}
+.position {margin:100px auto;width:300px;background:#000;border:1px solid #fff;position:relative;#zoom:1;
+    color: #fff;}
+.overflow {width:100%;background:#f00;overflow:hidden;#zoom:1;}
+.static {height:150px;width:450px;background:#00f;}
+.absolute {position:absolute;width:350px;height:80px;top:150px;left:-100px;background:#0c0;}
+</style>
+<div class="position"> 
+    <h2>position box</h2>     <div class="overflow"> 
+        <h3>overflow box</h3> 
+        <div class="static"> 
+            <p>This is static child element. This is static child element. 
+               This is static child element. This is static child element.<p> 
+            <p>This is static child element. This is static child element. 
+               This is static child element. This is static child element.<p> 
+        </div> 
+        <div class="absolute">This is absolute child element. This is absolute child element. 
+                         This is absolute child element. This is absolute child element.
+        </div> 
+    </div> 
+</div> 
+    <hr>
+    <div class="pr-test-wrap">
+        <div class="pr-test">
+            <div class="pr-item pr-item1"></div>
+            <div class="pr-item pr-item2"></div>
+        </div>
+    </div>
+    <hr>
+    <style type="text/css">
+        .pr-test-wrap{
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            height: 200px;
+            border: 1px solid #e3e3e3;
+            width: 400px;
+            margin: 30px auto;
+        }
+        .pr-test{
+            /*position: relative;*/
+        }
+        .pr-item1{
+            position: relative;
+            z-index: 999;
+            background: #666;
+            left: -20px;
+        }
+        .pr-item2{
+            position: absolute;
+            background-color: #999;
+            left: -20px;
+        }
+        .pr-item{
+            width: 100px;
+            height: 100px;
+        }
+        .border-collapse-test{
+            padding: 10px;
+            width: 600px;
+            /*text-align: justify;*/
+            border: 1px solid #e3e3e3;
+            font-size: 0;
+        }
+        .bc-item{
+            height: 40px;
+            width: 40px;
+            /*margin:10px;*/
+            display: inline-block;
+            background-color: #f5f5f5;
+            text-align: center;
+            line-height: 40px;
+            color: #85a;
+            font-size: 16px;
+            border: 4px solid #eee;
+            border-right: 4px solid #888;
+            border-left: 4px solid #333;
+            border-collapse: collapse;
+        }
+    </style>
+    <div class="border-collapse-test">
+        <div class="bc-item">1</div>
+        <div class="bc-item">1</div>
+        <div class="bc-item">1</div>
+        <div class="bc-item">1</div>
+        <div class="bc-item">1</div>
+        <div class="bc-item">1</div>
+    </div>
+    <hr>
+    <style type="text/css">
+        .nth-test{
+            padding: 10px;
+            width: 600px;
+            text-align: justify;
+            border: 1px solid #e3e3e3;
+        }
+        .nth-item{
+            height: 40px;
+            width: 40px;
+            margin:10px;
+            display: inline-block;
+            background-color: #f5f5f5;
+            text-align: center;
+            line-height: 40px;
+            color: #85a;
+        }
+        .nth-item:nth-child(4),.nth-item:nth-child(4) ~ .nth-item{
+            background-color: #88a;
+        }
+        .nth-item:nth-child(8) ~ .nth-item{
+            background-color: #f5f5f5;
+            color: #333;
+        }
+    </style>
+<div class="nth-test">
+    <div class="nth-item">1</div>
+    <div class="nth-item">2</div>
+    <div class="nth-item">3</div>
+    <div class="nth-item">4</div>
+    <div class="nth-item">5</div>
+    <div class="nth-item">6</div>
+    <div class="nth-item">7</div>
+    <div class="nth-item">8</div>
+    <div class="nth-item">9</div>
+    <div class="nth-item">10</div>
+</div>
+<hr>
+
+
+        <!-- <input type="text" name="" placeholder="金卡戴珊副科级珊副科珊副科珊副科" autocomplete="on"> -->
+        <div class="jus-text">
+            <div class="jus-item">
+            </div>
+            <div class="jus-item">
+            </div>
+            <div class="jus-item">
+            </div>
+            <div class="jus-item">
+            </div>
+            <div class="jus-item">
+            </div>
+        </div>
+        <p class="txt">
+            ashdkjhj sf salkf YUjs ASDJH sj
+        </p>
+        <p class="txt ltr" contenteditable="true">
+            a金卡戴 珊副科级珊 副科珊副科珊副科
+        </p>
+        <p class="txt rtl" contenteditable="true">
+            a金卡戴 珊副科级珊 副科珊副科珊副科
+        </p>
+        <p class="txt ttb" contenteditable="true">黑夜赐予我黑色的眼睛，而我却用它寻找光明
+        </p>
+        <p class="txt btt" contenteditable="true">黑夜赐予我黑色的眼睛，而我却用它寻找光明
+        </p>
+        <style type="text/css">
+            .jus-text{
+                width: 400px;
+                margin: 10px auto;
+                border: 1px solid #e3e3e3;
+                overflow:hidden;
+                text-align:justify;
+                text-align-last:justify;
+            }
+            .jus-text::after{
+                /*content: '';*/
+                display:inline-block;
+                width: 100%;
+                height: 0;
+                overflow:hidden;
+            }
+            .jus-item{
+                width: 120px;
+                display: inline-block;
+                height: 40px;
+                background-color: #aaa;
+
+            }
+            .txt{
+                width: 200px;
+                border:1px solid #e3e3e3;
+                margin:10px auto;
+            }
+            .ltr{
+                direction:ltr;
+            }
+            .rtl{
+                direction:rtl;
+            }
+            .ttb{
+                writing-mode: horizontal-tb;
+            }
+            .btt{
+                writing-mode: vertical-rl;
+            }
+        </style>
+        <hr class="mt-50">
+            <div class="dd">
+                <table class="table">
+                    <tr>
+                        <td width="5%">
+                            金卡级
+                        </td>
+                        <td>
+                            金卡戴珊副科级
+                        </td>
+                        <td>
+                            金卡戴珊副科级珊副科珊副科珊副科
+                        </td>
+                        <td>
+                            科级
+                        </td>
+                        <td>
+                            金
+                        </td>
+                        <td>
+                            金卡戴珊副科级金卡戴珊副科级金卡戴珊副科级金卡戴珊副科级
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                Some text [..XXXXXXXXXXXXXXXXXXXXXXXX.]
+            </p>
+            <figure>
+                <img src="images/1.jpg"/>
+                <figcaption>
+                    The great Sir Adam Catlace was named after
+        Countess Ada Lovelace, the first programffffffffffffffffffffmer.
+                    <!--会撒娇发挥空间撒谎方尽快哈市的风景哈师大话费卡设计很吊空间发空间还是得-->
+                </figcaption>
+            </figure>
+            <p>
+                More text [..XXXXXXXXXXXXXXXXXXXXXXXX.].
+            </p>
+            <script type="text/javascript">
+                // 为什么注释的就可以,没注释的获取不到
+    //         oUsername.onfocus = function (){
+    //             aUsermsg.innerHTML = '输入用户名';
+    //         };  
+    // function Focus(number){ switch (number){    
+    //     case 1: 
+    //         alert(aUsermsg.innerHTML);  
+    //         aUsermsg.innerHTML = '输入用户名';   
+    //         break;  
+    //     case 2: 
+    //         aEmailmsg.innerHTML = '输入邮箱';   
+    //         break;  
+    //     case 3: 
+    //         aPowmsg.innerHTML = '输入密码'; 
+    //         break;  
+    //     case 4: 
+    //         aPowokmsg.innerHTML = '确认密码';   
+    //         break;  
+    //     default:    
+    //         break;  
+    //     }   
+    // }
+</script>
+        </hr>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>机关党建网</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #FFF;
+        }
+
+        td {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            height: 30px;
+        }
+
+        .w1 {
+            width: 150px;
+        }
+
+        .w2 {
+            width: 480px;
+        }
+
+        span {
+            color: red;
+        }
+
+        .show {
+            display: none;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .clearfix:before, .clearfix:after {
+            display: table;
+            content: "";
+            height: 0 !important;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .lwl-container {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding-top: 10px;
+        }
+
+        .lwl-container-left {
+            width: 689px;
+            float: left;
+            border: #FBD398 1px solid;
+            background-color: #FFFBEC;
+            height: 500px;
+        }
+        .lwl-container-right{
+            width: 308px;
+            float: right;
+            border: #FBD398 1px solid;
+            border-left:none;
+            height: 500px;
+        }
+        .sm {
+            padding: 10px 20px 10px 20px;
+            font-size: 14px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="lwl-container clearfix">
+    <div class="lwl-table-box lwl-container-left">
+        <div style=" padding-left:5px; padding-top:5px; padding-bottom:15px;">
+            <img src="hdzx_11.jpg" name="hudong">
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr style="height: 0px; line-height: 0;">
+                <td width="100" style="height: 0px; line-height: 0;">&nbsp;</td>
+                <td width="250" style="height: 0px; line-height: 0;">&nbsp;</td>
+                <td width="80" style="height: 0px; line-height: 0;">&nbsp;</td>
+                <td width="250" style="height: 0px; line-height: 0;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right">信件类型：</td>
+                <td colspan="3">
+                    <label>
+                        <input name="leixing" type="radio" checked="checked" value="2"/>
+                        信息上报</label>
+                    <span class="show" id="show_1">&nbsp;&nbsp;&nbsp;&nbsp;提交失败，请输入正确格式内容重新提交！</span></td>
+            </tr>
+            <tr>
+                <td align="right">您的姓名：</td>
+                <td><input name="xingming" type="text" class="w1" id="xingming" value="" maxlength="4"/></td>
+                <td align="right">性别：</td>
+                <td><label>
+                    <input name="xingbie" type="radio" value="0" checked="checked"/>
+                    男</label>
+                    <label>
+                        <input name="xingbie" type="radio" value="1"/>
+                        女</label></td>
+            </tr>
+            <tr>
+                <td align="right">年龄：</td>
+                <td><input name="nianling" type="text" class="w1" id="nianling" maxlength="3"/></td>
+                <td align="right">职业：</td>
+                <td><input name="zhiye" type="text" class="w1" id="zhiye" maxlength="20"/></td>
+            </tr>
+            <tr>
+                <td align="right">单位：</td>
+                <td><input name="danwei" type="text" class="w1" id="danwei" maxlength="20"/><span>*</span><span
+                        class="show"
+                        id="show_101">请输入单位<span>
+                </td>
+                <td align="right">电话号码：</td>
+                <td><input name="dianhuahaoma" type="text" class="w1" id="dianhuahaoma" maxlength="30"/></td>
+            </tr>
+            <tr>
+                <td align="right">电子邮箱：</td>
+                <td><input name="dianziyouxiang" type="text" class="w1" id="dianziyouxiang" value="" maxlength="100"/>
+                </td>
+                <td align="right">手机号码：</td>
+                <td><input name="shoujihaoma" type="text" class="w1" id="shoujihaoma" value="" maxlength="30"/></td>
+            </tr>
+            <tr>
+                <td align="right">身份证号：</td>
+                <td><input name="shenfenzheng" type="text" class="w1" id="shenfenzheng" value="" maxlength="18"/></td>
+                <td align="right">邮政编码：</td>
+                <td><input name="youzhengbianma" type="text" class="w1" id="youzhengbianma" maxlength="6"/></td>
+            </tr>
+            <tr>
+                <td align="right">通讯地址(区/县)：</td>
+                <td colspan="3"><input name="tongxundizhi" type="text" class="w2" id="tongxundizhi" maxlength="100"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">信件主题：</td>
+                <td colspan="3"><input name="xinjianzhuti" type="text" class="w2" id="xinjianzhuti" value=""
+                                       maxlength="100"/>
+                    <span>*
+</span></td>
+            </tr>
+            <tr>
+                <td align="right">信件内容：</td>
+                <td colspan="3"><textarea name="xinjianneirong" class="w2" cols="82" rows="4"
+                                          id="xinjianneirong"></textarea>
+                    <span>*
+</span></td>
+            </tr>
+            <tr>
+                <td align="right">附件：</td>
+                <td colspan="3"><input name="fujian" type="file" id="fujian"/>
+                    支持文档、图片、打包、压缩文件等（15MB 以内）
+                    <div><span class="show" id="show_701">附件格式错误</span>
+
+                        <span class="show" id="show_702">附件尺寸超过限制</span>
+
+                        <span class="show" id="show_703">创建目录失败</span>
+
+                        <span class="show" id="show_704">附件上传失败</span>
+                    </div>
+                    <div><label for="yesfujian">
+                        <input type="checkbox" name="yesfujian" id="yesfujian"/>
+                        我已确认附件没有超过 15 MB。
+                    </label></div>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">是否愿意公开：</td>
+                <td colspan="3"><label for="gk0"><input id="gk0" name="gongkai" type="radio" value="0"
+                                                        checked="checked"/>
+                    愿意公开 </label>
+                    <label for="gk1">
+                        <input id="gk1" name="gongkai" type="radio" value="1"/>
+                        不愿意公开</label></td>
+            </tr>
+            <tr>
+                <td align="right">是否曾经反映：</td>
+                <td colspan="3"><label for="fy0"><input id="fy0" name="cengjing" type="radio" value="0"
+                                                        checked="checked"/>
+                    之前没反映过</label>
+                    <label for="fy1">
+                        <input id="fy1" name="cengjing" type="radio" value="1"/>
+                        曾经反映过</label></td>
+            </tr>
+            <tr>
+                <td align="right">&nbsp;</td>
+                <td colspan="3"><input id="tisub" type="submit" value="提交"/> <span>请确认填写数据符合要求，提交前请备份数据，以便提交失败后重新填写<a
+                        href="?" target="_blank" style="color:#FF0000; text-decoration:none;">。</a></span>
+                    <br>
+                    <span class="show" id="show_ing" style="font-size:24px;">正在提交数据，请耐心等待。</span>
+                    <span class="show" id="show_add" style="font-size:24px;">提交成功，感谢你的建言献策。</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right lwl-container-right">
+        <div style=" padding-left:5px; padding-top:5px;">
+            <img src="hdzx_14.jpg" width="138" height="38">
+        </div>
+        <div class="sm">
+            1、本栏目接收向中共福建省委省直机关工作委员会提出的建言献策、申诉、反映问题以及信息上报。 <br>
+            2、本栏目所接收信息将进入中共福建省委省直机关工作委员会相应的处理流程。<br>
+            3、本栏目对所有接收的信息有处置权。<br>
+            4、为了保障您的权益，请您如实填写个人资料，以便联系。<br>
+            5、请保证您发布信息的真实性，不要因为您发布信息的不真实而造成不必要麻烦和承担相应的责任。<br>
+            6、请您确保所使用的电子邮箱能正常接收本栏目给您的回馈信息。<br>
+            7、标注 * 为必填项。
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

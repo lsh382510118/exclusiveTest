@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+});
+</script> 
+<style type="text/css"> 
+.clip-box{
+	height: 100%;
+	width: 100%;
+	background:url(images/112731906553ea81fbo.jpg) no-repeat center;
+	background-size: cover;
+	
+}
+.clip{
+	clip: rect(0 0 100px 100px);
+	background-color: #00C9FF;
+	height: 100%;
+	width: 100%;
+}
+.text-gradient {  
+    display: inline-block;
+    font-family: '微软雅黑';
+    font-size: 10em;
+    position: relative; 
+    text-align: left;
+    padding-left: 2px;
+}  
+  
+.text-gradient[data-text]::after {  
+    content: attr(data-text);  
+    color: blueviolet;  
+    position: absolute;  
+    left: 0;  
+    z-index: 2;
+    top: 0;
+    text-align: center;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+}
+.bg-img{
+	height: 300px;
+	width: 300px;
+background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)),
+                  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)),
+                  -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #555)),
+                  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #555));
+}
+</style> 
+</head>
+<body>
+	<div class="clip-box " >
+		<div class="clip text-gradient"data-text="欧米伽">欧米伽
+			<div class="bg-img"></div>
+		</div>
+	</div>
+</body>
+</html>

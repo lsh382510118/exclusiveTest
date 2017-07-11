@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<title>滚轮-控制页面切换</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.bg-red{
+	background-color: #f41c20
+}
+.bg-blue{
+	background-color: #4ca1fe;
+}
+.bg-zise{
+	background-color: #9961ec;
+}
+.bg-orange{
+	background-color: #fd8108;
+}
+.bg-green{
+	background-color: #52b900;
+}
+body,html{
+	height: 100%;
+	width: 100%;
+	font-family: '微软雅黑';
+}
+.pageBox{
+	height: 100%;
+	position: relative;
+    overflow: hidden;
+}
+.page{
+	height: 100%;
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+/*	-webkit-transition:1s all cubic-bezier(.2,1.5,.3,.8);
+	transition:1s all cubic-bezier(.2,1.5,.3,.8);*/
+	z-index:10;
+}
+.page.current{
+	z-index:99;
+}
+.pagenum{
+	position: absolute;
+	top: 180px;
+	left: -30%;
+	height: 10px;
+	width: 10px;
+	color: #fff;
+	margin-left: -40px;
+	border: 6px solid #fff;
+	border-radius: 80px;
+	text-align: center;
+	line-height: 72px;
+	font-size: 40px;
+	font-weight: bold;
+	opacity: 0;
+	-webkit-transition:1s all cubic-bezier(.2,1.5,.3,.8);
+	transition:1s all cubic-bezier(.2,1.5,.3,.8);
+}
+.page.current .pagenum{
+	height: 80px;
+	width: 80px;
+	opacity: 1;
+	left: 50%;
+}
+.page-title{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	top: -150px;
+	color: #fff;
+	opacity: .3;
+	padding:0 2em;
+	-webkit-transition:1s all cubic-bezier(.2,1.5,.3,.8);
+			transition:1s all cubic-bezier(.2,1.5,.3,.8);
+	-webkit-transition-delay: 1.2s;
+			transition-delay: 1.2s;
+}
+.page.current .page-title{
+	top: 40px;
+	opacity: 1;
+}
+.page-detail{
+	color: #fff;
+	text-align: center;
+	padding: 2em;
+	position: absolute;
+	bottom: 70px;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	-webkit-transition:.6s all cubic-bezier(.2,1.5,.3,.8);
+			transition:.6s all cubic-bezier(.2,1.5,.3,.8);
+	-webkit-transition-delay: .2s;
+			transition-delay: .2s;
+	-webkit-transform: scale(.7);
+			transform: scale(.7);
+}
+.page.current .page-detail{
+	bottom: 100px;
+	opacity: 1;
+	-webkit-transform: scale(1);
+			transform: scale(1);
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	var wheelstate=true;
+	$('.page.current').css('top','0')
+	$('.pageBox').mousewheel(function(event, delta) {
+		if(wheelstate){
+			var pagenum=$('.page').length,
+		    cindex=$('.page.current').index();
+			if(delta>0){
+				var t=(cindex+pagenum-1)%pagenum;
+				$('.page').eq(cindex).removeClass('current').stop(true, true).animate({"top":'100%'}, 500);
+				$('.page').eq(t).addClass('current').css('top','-100%').stop(true, true).animate({"top":0}, 500);
+				wheelstate=false;
+				setTimeout(function(){wheelstate=true},500);
+			}else{
+				var t=(cindex+pagenum+1)%pagenum;
+				$('.page').eq(cindex).removeClass('current').stop(true, true).animate({"top":'-100%'}, 500);
+				$('.page').eq(t).addClass('current').css('top','100%').stop(true, true).animate({"top":0}, 500);
+				wheelstate=false;
+				setTimeout(function(){wheelstate=true},500);
+			}	
+			console.info(delta+' '+t +' ' +wheelstate);		
+		}				
+    });
+})
+</script>
+</head>
+<body>
+<div class="pageBox">
+	<div class="page page1 current bg-red">
+		<h1 class="page-title">Teach me how can not sad
+You persuaded me out of the fire
+I can say what is wrong?</h1>
+		<div class="pagenum"><span>1</span></div>
+		<p class="page-detail">Each affectionate eyes behind
+			Who knows how much sorrow much sorrow
+			Teach me how can not sad
+			You persuaded me out of the fire
+			I can still do do wrong
+			If you want me to put on your heart
+			Just change the results
+			I said I would do I have enough lonely
+			Just love to say</p>
+	</div>
+	<div class="page page2 bg-blue">
+		<h1 class="page-title">What say
+You said to me leave will be free
+Try to live tried to find yourself</h1>
+		<div class="pagenum"><span>2</span></div>
+		<p class="page-detail">My heart good afflictive
+			If you have I endure not let tears flow
+			The first hold your fingers from your gentleness
+			Each affectionate eyes behind
+			Who knows how much sorrow much sorrow
+			Love,</p></div>
+	<div class="page page3 bg-zise">
+		<h1 class="page-title">Don't love to waste
+Just love to say</h1>
+		<div class="pagenum"><span>3</span></div>
+		<p class="page-detail">how to say
+			My heart good afflictive
+			If you have I endure not let tears flow
+			The first hold your fingers from your gentleness
+			Each affectionate eyes behind
+			Who knows how much sorrow much sorrow
+			Teach me how can not sad
+			You persuaded me out of the fire</p></div>
+	<div class="page page4 bg-orange">
+		<h1 class="page-title">My heart good afflictive</h1>
+		<div class="pagenum"><span>4</span></div>
+		<p class="page-detail">I can say what is wrong? What say
+			You said to me leave will be free
+			Try to live tried to find yourself
+			Why love wasted</p></div>
+	<div class="page page5 bg-green">
+		<h1 class="page-title">If you have I endure not let tears flow
+The first hold your fingers from your gentleness</h1>
+		<div class="pagenum"><span>5</span></div>
+		<p class="page-detail">Each affectionate eyes behind
+			Who knows how much sorrow much sorrow
+			Teach me how can not sad
+			You persuaded me out of the fire
+			I can still do do wrong
+			If you want me to put on your heart
+			Just change the results
+			I said I would do I have enough lonely
+			Just love to say</p>
+		</div>
+		
+</div>
+</body>
+</html>

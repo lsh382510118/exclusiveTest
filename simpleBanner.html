@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+	<script src="js/jquery.min.js"></script>
+<title>hoverSlideout Demo</title>
+<style type="text/css"> 
+.banner{
+	position: relative;
+	height: 200px;
+	width: 300px;
+	margin:20px auto;
+	overflow: hidden;
+}
+.banner img{
+	position: absolute;
+	height:100%;
+	left:100%;
+	top:0;
+}
+.banner img.on{
+	left: 0;
+}
+</style> 
+</head>
+<body>
+<div class="banner">
+	<img src="images/1.png" class="on">
+	<img src="images/2.png">
+	<img src="images/3.png">
+	<img src="images/4.png">
+</div>
+<script>
+	bannerScroll();
+	setInterval(function(){
+		bannerScroll();
+	},1000);
+	function bannerScroll(){
+		var curIndex = $('.banner img.on').index();
+		var lenght = $('.banner img').length;
+		var nextIndex = (curIndex+lenght+1)%lenght;
+		$('.banner img.on').animate({'left':'-100%'},1000).removeClass('on');
+		$('.banner img').eq(nextIndex).css('left','100%').animate({'left':'0'},1000).addClass('on');
+	}
+
+</script>
+</body>
+</html>

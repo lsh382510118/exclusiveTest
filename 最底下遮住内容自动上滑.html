@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hoverSlideout Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+	<script src="js/jquery.min.js"></script>
+<!-- <script src="js/rem.js"></script> -->
+<script type="text/javascript">
+$(function(){
+	$('.tt li p').click(function(){
+		var that=$(this).parent('li').children('div');
+		if(that.css('display')=="block"){
+			$('.tt li div').slideUp(200);
+		}else{
+			$('.tt li div').slideUp(200);
+			that.slideToggle(200,function(){
+				if ($(this).is(":visible")) {
+					var thisT=$(this).height()+$(this).offset().top;
+					var x=$('.wrap').offset().top+$('.tt').height();
+					if(thisT>x){
+						var difHeight = Math.abs(thisT - x);
+						$(".tt").animate({'scrollTop':difHeight + $(".tt").scrollTop()},260);
+					}
+				}
+			});
+		}
+	});
+})
+
+
+</script>
+<style type="text/css">
+body,html{
+	background-color: #4d5879;
+	height: 100%;
+	width: 100%;
+	font-family: '微软雅黑';
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;	
+}
+.wrap{
+	position: absolute;
+	top: 44px;
+	bottom: 44px;
+	width: 100%;
+	background-color: #E0FFFF;
+}
+.wrap ul{
+	height: 100%;
+	border-top: 1px solid #e5e5e5;
+	overflow-y: auto;
+	 -webkit-transition: all 1s ease;
+	transition: all 1s ease;
+}
+.wrap li{
+	border-bottom: 1px solid #e5e5e5;
+}
+.wrap li p{
+	padding: 1em 0;
+	color: #ac2aa1;
+	font-size: 20px;
+	text-align: center;
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+.tt li p:hover{
+	background-color: #fbfbfb;	
+}
+.tt li>div{
+	height: 4em;
+	background-color: #bda4fc;
+	display: none;
+}
+.tt li>div.on{
+	display: block;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="tt">
+			<li><p>1</p> <div></div></li>
+			<li><p>2</p> <div></div></li>
+			<li><p>3</p> <div></div></li>
+			<li><p>4</p> <div></div></li>
+			<li><p>5</p> <div></div></li>
+			<li><p>6</p> <div></div></li>
+			<li><p>7</p> <div class="on"></div></li>
+			<li><p>8</p> <div></div></li>
+			<li><p>9</p> <div></div></li>
+			<li><p>10</p> <div></div></li>
+			<li><p>11</p> <div></div></li>
+			<li><p>12</p> <div></div></li>
+			<li><p>13</p> <div></div></li>
+		</ul>
+	</div>
+</body>
+</html>

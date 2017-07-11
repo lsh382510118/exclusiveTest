@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>最外框布局 - Demo</title>
+<style type="text/css"> 
+*{
+	padding: 0;
+	margin: 0;
+}
+/*核心样式 star*/
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+}
+.top{
+	min-height: 100%;
+	padding-bottom: 50px;
+	box-sizing:border-box;
+}
+.bottom{
+	height: 50px;
+	margin-top: -50px;
+}
+/*核心样式 End*/
+
+/*以下样式都是哥哥搞这个页面添加的,属于附属样式,你们看看就算了*/
+.header{
+	height: 50px;
+	background-color: #01579B;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+}
+.contain{
+	padding: 10px;
+	font-size: 14px;
+	color: #444;
+}
+.contain p,pre{
+	width: 600px;
+	margin: auto;
+	line-height: 2;
+	letter-spacing: 2;
+	text-indent: 2em;
+}
+pre{
+	line-height: 1.6;
+}
+.bottom{
+	background-color: #333;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 1em;
+	text-indent:1em;
+}
+</style> 
+</head>
+<body>
+<div class="top">
+	<div class="header">header</div>
+	<div class="contain">
+		<p>优点:<br />			</p>
+		<p>缺点:<br />		</p>
+		<p></p>
+	</div>
+</div>
+<div class="bottom">底部</div>
+</body>
+</html>

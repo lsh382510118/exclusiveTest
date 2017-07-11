@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>tetsDemo</title>
+<!--<link rel="stylesheet" type="text/css" href="css/css.css">-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			padding:0;
+			margin:0;
+		}
+		.signBtn{
+			height: 100px;
+			width: 100px;
+			text-align: center;
+			margin:10px auto;
+			background-color: #5cb3ed;
+			border-radius: 50%;
+			padding: 2px;
+			position: relative;
+			cursor: pointer;
+		}
+		.signMain{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			top: 50%;
+			margin-top: -40px;
+			left:50%;
+			margin-left:-40px;
+			background-color: #add9f5;
+			border: 6px solid #fff;
+			box-sizing: border-box;
+			border-radius: 50%;
+			line-height: 68px;
+			color: #fff;
+			z-index: 10;
+		}
+		.signPress{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top:0;
+			left: 0%;
+			/*margin-left: -25px;*/
+			-webkit-transform-origin:center;
+			-moz-transform-origin:center;
+			transform-origin:center;
+			-webkit-transform: rotate(36deg);
+			-moz-transform: rotate(36deg);
+			transform: rotate(36deg);
+		}
+		.signPress img{
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<div class="signBtn" id="signBtn">
+	<div class="signPress" times="1"><img src="images/qdbg2.png"></div>
+	<div class="signMain">测试</div>
+</div>
+<script type="text/javascript">
+var num = 5,
+	times = 1;
+var signBtn = document.getElementById('signBtn');
+	signBtn.onclick = function () {
+		times++;
+		if(times > num){
+			alert("超。。。");
+		}else{
+			var html = '<div class="signPress" times="'+times+'"><img src="images/qdbg2.png"></div>';
+			$('.signBtn').append(html);
+			signFun(num,times);
+		}
+	}
+	function signFun(num,times){
+		var deg =  $('.signPress[times="'+times+'"]').css("transform");
+		var deg=eval('get'+deg);
+		var fDeg = 72 *(times-1)+36;
+		var deg =  $('.signPress[times="'+times+'"]').css("transform", "rotate(" + fDeg + "deg)");
+		var deg =  $('.signPress[times="'+times+'"]').css("-moz-transform", "rotate(" + fDeg + "deg)");
+		var deg =  $('.signPress[times="'+times+'"]').css("-webkit-transform", "rotate(" + fDeg + "deg)");
+		console.info(deg+'    '+ times+ '  '+ fDeg)
+	}
+	function getmatrix(a,b,c,d,e,f){
+		var aa=Math.round(180*Math.asin(a)/ Math.PI);
+		var bb=Math.round(180*Math.acos(b)/ Math.PI);
+		var cc=Math.round(180*Math.asin(c)/ Math.PI);
+		var dd=Math.round(180*Math.acos(d)/ Math.PI);
+		var deg=0;
+		if(aa==bb||-aa==bb){
+			deg=dd;
+		}else if(-aa+bb==180){
+			deg=180+cc;
+		}else if(aa+bb==180){
+			deg=360-cc||360-dd;
+		}
+		return deg>=360?0:deg;
+	}
+</script>
+</body>
+</html>

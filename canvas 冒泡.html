@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="UTF-8">
+	<title>来自蓝靖宇宁t</title>
+	<style>
+	html,body {
+		width:100%;
+		height: 100%;
+		overflow: hidden;
+		background: #000;
+	}
+	* {padding:0;margin:0; }
+	</style>
+</head>
+<body style="background-color: #000">
+	<canvas id="can"></canvas>
+
+	<script>
+		var can = document.getElementById('can');
+		var con = can.getContext('2d');
+		var pw,ph,cw,ch;
+		(function(){
+
+			var setAttr = function(){
+				pw = window.innerWidth;
+				ph = window.innerHeight;
+				cw = pw*2;
+				ch = ph *2;
+				can.width = cw;
+				can.height = ch;
+				can.setAttribute("style","width:"+pw+"px; height:"+ph+"px;");				
+			}
+
+			window.addEventListener('resize', setAttr, false);
+			setAttr();
+
+		})();	
+			
+		var us = [];
+
+		for (var i = 0; i < cw*0.6; i++) {
+			var a = new me();
+			us.push(a);
+		}
+
+		go();
+		function go(){
+			con.clearRect(0,0,cw,ch);
+			for (var i in us) {
+				us[i].draw();
+			}
+			requestAnimationFrame(go);
+		}
+
+		function me(){
+			var that = this;
+			function makeMe (){
+				that.x = cw * Math.random();
+				that.y = ch+ch* Math.random();
+				that.opacity = 0.3+Math.random()*0.5;
+				that.w = 10 * Math.random()+10;	
+				that.s =1+4* Math.random();			
+				that.c1 = Math.ceil(Math.random()*255);
+				that.c2 = Math.ceil(Math.random()*255);
+				that.c3 =Math.ceil( Math.random()*255);				
+			}
+
+			makeMe();
+
+
+
+			this.draw = function(){
+
+				if (this.opacity < 0) {
+					makeMe();
+				}
+				this.y-=this.s;
+				this.opacity-= 0.0005;
+				con.beginPath();
+				con.arc(this.x,this.y,this.w,0,2*Math.PI);
+				con.fillStyle = "rgba("+this.c1+","+this.c2+","+this.c3+","+this.opacity+")";
+				con.fill();
+			}
+		}
+
+	</script>
+</body>
+</html>			

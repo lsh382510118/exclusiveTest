@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/test.js"></script>
+
+<style type="text/css"> 
+img,div,a{
+	padding: 0;margin: 0;
+}
+.preview{
+	margin: 100px auto;
+}
+.preview a{
+	height: 100px;
+	display: inline-block;
+}
+.preview a>img{
+	height: 100%;
+}
+.previewbox{
+	height:150px;
+	position:fixed;
+	padding:5px;
+	background-color:rgba(255,255,255,.6);
+	box-shadow:1px 0 4px rgba(100,100,100,.4);
+	border-radius:6px;
+	border:1px solid #e3e3e3;
+	z-index:999;
+}
+.previewbox img{
+	height:100%;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".preview a").preview();	  
+});
+</script> 
+</head>
+<body>
+	<div class="preview">
+		<a href="images/1.jpg"><img src="images/1.jpg"></a>
+		<a href="images/2.jpg"><img src="images/2.jpg"></a>
+		<a href="images/3.jpg"><img src="images/3.jpg"></a>
+		<a href="images/4.jpg"><img src="images/4.jpg"></a>
+	</div>
+
+</body>
+</html>

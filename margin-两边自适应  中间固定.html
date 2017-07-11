@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>margin-两边自适应  中间固定</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+}
+.clearFix{
+	clear: both;
+}
+.left,
+.right {
+float: left;
+margin: 0 0 0 -271px;
+width: 50%;
+}
+.main {
+width: 540px;
+float: left;
+background: #888;
+}
+.inner {
+padding: 20px;
+}
+.left .inner,
+.right .inner {
+margin: 0 0 0 271px;
+background: #b5a2e2;
+}
+/*用的时候记得删掉*/
+*{
+	text-align: center;
+	color: #fff
+}
+</style>
+</head>
+<body>
+<div class="header" style="background-color: #33e4f4; text-align: center; font-size: 33px;color:#fff;padding:15px 10px;margin-bottom: 10px;">margin-两边自适应  中间固定</div>
+<div>
+	<div class="left">
+		<div class="inner">Left content</div>
+	</div>
+	<div class="main">
+	<div class="inner">just Main centon</div>
+	</div>
+	<div class="right">
+	<div class="inner">Rightcontent</div>
+	</div>
+	<div class="clearFix"></div>
+</div>
+	<div style="background-color: #33ffa6; text-align: center; font-size: 33px;color:#fff;margin-top: 10px"> footer</div>
+	
+</body>
+</html>

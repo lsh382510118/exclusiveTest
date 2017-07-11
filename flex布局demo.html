@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>hoverSlideout Demo</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .w80{
+            width: 80px !important;
+        }
+        .w50{
+            width: 50px !important;
+        }
+        .w350{
+            width: 350px !important;
+        }
+        .h80{
+            height: 80px !important;
+        }
+        .h120{
+            height: 80px !important;
+        }
+        .h140{
+            height: 80px !important;
+        }
+        h1{
+            text-align: center;
+            padding: 10px;
+            color: #666;
+            margin: 40px;
+            border-bottom: 1px solid #E3E3E3;
+        }
+        h2{
+            color: #444;
+            font-size:18px;
+            padding: 10px;
+
+        }
+        h3{
+            padding: 15px;
+            font-size:16px;
+            color: #333;
+        }
+        .empBox{
+            margin:15px 25px;
+        }
+        .attrDetail{
+            color: #999;
+            font-size:14px;
+            padding: 0px 20px;
+        }
+        .empBox {
+            display: flex;
+            display: -webkit-flex;
+            border:1px solid #E3E3E3;
+        }
+        /*  1.flex-direction属性 */
+        .empBox.row{
+            flex-direction: row;
+        }
+        .empBox.row-reverse{
+            flex-direction: row-reverse;
+        }
+        .empBox.column{
+            flex-direction: column;
+        }
+        .empBox.column-reverse{
+            flex-direction: column-reverse;
+        }
+        .fitem{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #3a606a;
+            margin:5px;
+            text-align: center;
+            color: #fff;
+            
+        }
+
+        /*2.flex-wrap属性*/
+        .empBox.wrap-nowrap{
+            flex-wrap: nowrap;
+        }
+        .empBox.wrap-wrap{
+            flex-wrap: wrap;
+        }
+        .empBox.wrap-wrap-reverse{
+            flex-wrap: wrap-reverse;
+        }
+        /*3.flex-flow属性*/
+        .empBox.flow-flex-direction{
+            flex-flow: row-reverse wrap;
+        }
+        .empBox.flow-flex-direction{
+            flex-flow: row-reverse wrap;
+        }
+
+        /* 4.justify-contnet属性 */
+        .empBox.justifyC-flex-start{
+            justify-content: flex-start;
+        }
+        .empBox.justifyC-flex-end{
+            justify-content: flex-end;
+        }
+        .empBox.justifyC-center{
+            justify-content: center;
+        }
+        .empBox.justifyC-space-between{
+            justify-content: space-between;
+        }
+        .empBox.justifyC-space-around{
+            justify-content: space-around;
+        }
+
+        /*<h2>5.align-items属性</h2>*/
+        .align-itemsBox.empBox .fitem{
+            height: auto;
+
+        }
+        .empBox.alignI-flex-start{
+            align-items: flex-start;
+        }
+        .empBox.alignI-flex-end{
+            align-items: flex-end;
+        }
+        .empBox.alignI-center{
+            align-items: center;
+        }
+        .empBox.alignI-baseline {
+            align-items: baseline ;
+        }
+        .empBox.alignI-stretch{
+            align-items: stretch;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>display:flex</h1>
+    <div class="attrBox">
+        <h2>1.flex-direction属性</h2>
+        <p class="attrDetail"><span>可选属性(默认属性为：row) -- </span>row | row-reverse | column | column-reverse</p>
+        <h3>(1). row</h3>
+        <div class="empBox row">
+            <div class="fitem">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(2). row-reverse</h3>
+        <div class="empBox row-reverse">
+            <div class="fitem">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(3). column</h3>
+        <div class="empBox column">
+            <div class="fitem">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(4). colimn-reverse</h3>
+        <div class="empBox column-reverse">
+            <div class="fitem">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+    </div>
+    <div class="attrBox">
+        <h2>2.flex-wrap属性</h2>
+        <p class="attrDetail"><span>可选属性(默认属性为：row) -- </span>nowrap  | wrap  | wrap-reverse</p>
+        <h3>(1). nowrap</h3>
+        <div class="empBox wrap-nowrap">
+            <div class="fitem w350">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem w350">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(2). wrap</h3>
+        <div class="empBox wrap-wrap">
+            <div class="fitem w350">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem w350">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(3). wrap-reverse</h3>
+        <div class="empBox wrap-wrap-reverse">
+            <div class="fitem w350">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem w350">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+    </div>
+    <div class="attrBox">
+        <h2>3.flex-flow属性  <small>其实-是上两种的结合</small></h2>
+        <p class="attrDetail"><span>可选属性(默认属性为：row) -- </span>flex-direction  | flex-wrap</p>
+        <h3>(1). nowrap</h3>
+        <div class="empBox flow-flex-direction">
+            <div class="fitem w350">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem w350">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(2). wrap</h3>
+        <div class="empBox flow-flex-wrap">
+            <div class="fitem w350">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem w350">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+    </div>
+    <div class="attrBox">
+        <h2>4.justify-contnet属性</h2>
+        <p class="attrDetail"><span>可选属性(默认属性为：row) -- </span>flex-start  | flex-end  | center | space-between | space-around </p>
+        <h3>(1). flex-start</h3>
+        <div class="empBox justifyC-flex-start">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem ">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(2). flex-end</h3>
+        <div class="empBox justifyC-flex-end">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem ">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(3). center</h3>
+        <div class="empBox justifyC-center">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem ">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(4). space-between</h3>
+        <div class="empBox justifyC-space-between">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem ">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+        <h3>(5). space-around</h3>
+        <div class="empBox justifyC-space-around">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem ">3</div>
+            <div class="fitem w80">4</div>
+        </div>
+    </div>
+    <div class="attrBox">
+        <h2>5.align-items属性</h2>
+        <p class="attrDetail"><span>可选属性(默认属性为：flex-start) -- </span>flex-start  | flex-end  | center | space-between | space-around </p>
+        <h3>(1). flex-start</h3>
+        <div class="empBox alignI-flex-start align-itemsBox">
+            <div class="fitem h80">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem h140">3</div>
+            <div class="fitem h120">4</div>
+        </div>
+        <h3>(2). flex-end</h3>
+        <div class="empBox alignI-flex-end align-itemsBox">
+            <div class="fitem h80">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem h140">3</div>
+            <div class="fitem h120">4</div>
+        </div>
+        <h3>(3). center</h3>
+        <div class="empBox alignI-center align-itemsBox">
+            <div class="fitem h80">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem h140">3</div>
+            <div class="fitem h120">4</div>
+        </div>
+        <h3>(4). baseline </h3>
+        <div class="empBox alignI-baseline  align-itemsBox">
+            <div class="fitem h80">1</div>
+            <div class="fitem w50">2</div>
+            <div class="fitem h140">3</div>
+            <div class="fitem h120">4</div>
+        </div>
+        <h3>(5). stretch</h3>
+        <div class="empBox alignI-stretch align-itemsBox">
+            <div class="fitem ">1</div>
+            <div class="fitem w50">222<br>2222222222222222</div>
+            <div class="fitem ">3</div>
+            <div class="fitem ">2222</div>
+        </div>
+        <h3>(6). order</h3>
+        <div class="empBox order-box">
+            <div class="fitem " style="order:3">3</div>
+            <div class="fitem w50" style="order:2">2<br>2222222222222222</div>
+            <div class="fitem " style="order:1">1</div>
+            <div class="fitem " style="order:0">0</div>
+        </div>
+        <style type="text/css">
+        </style>
+        <h3>(7). flex-grow</h3>
+        <div class="empBox order-box">
+            <div class="fitem " style="flex-grow:3">3</div>
+            <div class="fitem w50" style="flex-grow:2">2<br>2222222222222222</div>
+            <div class="fitem " style="flex-grow:1">1</div>
+            <div class="fitem " style="flex-grow:1">1</div>
+        </div>
+    </div>
+
+</body>
+</html>

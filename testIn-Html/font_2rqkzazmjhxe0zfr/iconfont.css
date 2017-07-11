@@ -1,0 +1,34 @@
+
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.ttf?t=1494912876038') format('truetype'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkbox:before { content: "\e640"; }
+
+.icon-checkbox3:before { content: "\e7b9"; }
+
+.icon-radio1:before { content: "\e670"; }
+
+.icon-radio-2:before { content: "\e627"; }
+
+.icon-checkbox1:before { content: "\e603"; }
+
+.icon-checkbox2:before { content: "\e608"; }
+
+.icon-checkbox-1:before { content: "\e625"; }
+
+.icon-radio2:before { content: "\e682"; }
+
+.icon-radio-checkbox:before { content: "\e662"; }
+
+.icon-checkbox-3:before { content: "\e600"; }
+

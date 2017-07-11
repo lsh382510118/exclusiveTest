@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<style type="text/css">
+.ss{
+	position: fixed;
+	bottom: 100px;
+	right: 50px;
+}
+</style>
+</head>  
+<body> 
+<button class="ss" onClick="aa();">sdfs</button> 
+<canvas width="1000" height="1000" id="myCanvas"></canvas>  
+<script>  
+var myCanvas = document.getElementById("myCanvas");  
+var context = myCanvas.getContext('2d');  
+context.fillStyle = 'rgb(255,0,0)';  
+context.lineWidth = 5;  
+context.strokeRect(0,0,1000,1000);  
+//绘图的起始点，也就是五角星的顶点坐标  
+var x=100,y=100;  
+for(var i=0;i<1;i++)  
+{  
+context.beginPath();  
+//五角星边的长度为100px，x1、h2为五角星的底部点坐标偏差值，x2、h2为五角星上部点偏差值  
+var x1 = 100*Math.sin(Math.PI/10);  
+var h1 = 100*Math.cos(Math.PI/10);  
+var x2 = 50;  
+var h2 = 50*Math.tan(Math.PI/5);  
+context.lineTo(x+x1,y+h1);  
+context.lineTo(x-50,y+h2);  
+context.lineTo(x+50,y+h2);  
+context.lineTo(x-x1,y+h1);  
+context.lineTo(x-x1,y+h1);  
+context.lineTo(x,y);  
+context.closePath();  
+context.fill();  
+x=(i+2)*100;  
+y=100;  
+context.moveTo(x,y);  
+}
+function aa() {
+  	window.scrollTOP(0);
+  }  
+</script>  
+</body>  
+</html>

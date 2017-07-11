@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>审批系统</title>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/btn.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/slide.js"></script>
+</head>
+<body style="padding-bottom: 250px;">
+<!--浮动导航-->
+<div class="lw-fiexd">
+    <a href="#" class="current">案件走势</a>
+    <a href="#">管理态势</a>
+    <a href="#">分析报告</a>
+    <a href="#">模板管理</a>
+</div>
+<div class="lw-header">
+    <embed style="position: relative; z-index: 1;" allownetworking="none" allowscriptaccess="never" width="1420"
+           height="335" menu="false" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer"
+           src="header.swf" type="application/x-shockwave-flash" wmode="transparent"></embed>
+</div>
+<!--内容-->
+<div class="lw-main">
+    <div class="lw-user">
+        <span>张山[高院]</span>
+        <img src="images/down.png" class="alimg mr10"/>
+    </div>
+    <!--导航-->
+    <div class="lw-navcnt">
+        <ul class="lw-nav clearfix">
+            <li class="current"><a href="#"><i class="icon-zh"></i>综合</a></li>
+            <li><a href="#"><i class="icon-xs"></i>刑事</a></li>
+            <li><a href="#"><i class="icon-ms"></i>民事</a></li>
+            <li><a href="#"><i class="icon-xz"></i>行政</a></li>
+            <li><a href="#"><i class="icon-zx"></i>执行</a></li>
+            <li><a href="#"><i class="icon-xf"></i>信访</a></li>
+            <li><a href="#"><i class="icon-qt"></i>其他</a></li>
+        </ul>
+        <div class="lw-navcon">
+            <!--综合-->
+            <div class="navcon" style="display: block;">
+                <!--筛选-->
+                <div class="lw-select">
+                    <!--筛选条件-->
+                    <table class="lw-tableNline">
+                        <tr>
+                            <th width="5%" class="tr">法院：</th>
+                            <td width="" class="tl">
+                                <div class="btn-group">
+                                    <span class="btn btn-primary radius">全省</span>
+                                    <span class="btn btn-default radius">辖区</span>
+                                    <span class="btn btn-default radius">下级</span>
+                                    <span class="btn btn-default radius">本院</span>
+                                </div>
+                            </td>
+                            <th width="10%" class="tr">审判程序：</th>
+                            <td class="tl">
+                                <div class="btn-group">
+                                    <span class="btn btn-primary radius">全部</span>
+                                    <span class="btn btn-default radius">一审</span>
+                                    <span class="btn btn-default radius">二审</span>
+                                    <span class="btn btn-default radius">再审</span>
+                                    <span class="btn btn-default radius">其他</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="tr">指标：</th>
+                            <td class="tl">
+                                <span class="btn btn-primary-outline radius">存旧</span>
+                                <span class="btn btn-default-outline radius">新收</span>
+                                <span class="btn btn-default-outline radius">结案</span>
+                                <span class="btn btn-default-outline radius">未结</span>
+                            </td>
+                            <th class="tr">统计日期：</th>
+                            <td class="tl clearfix">
+                                <div class="btn-group fl mr10">
+                                    <span class="btn btn-primary radius">当月</span>
+                                    <span class="btn btn-default radius">上月</span>
+                                    <span class="btn btn-default radius">当年</span>
+                                    <span class="btn btn-default radius">上年</span>
+                                    <span class="btn btn-default radius">自定义</span>
+                                </div>
+                                <div class="fl">
+                                    <input type="text" class="input-text" value="2017-01"/>&nbsp;-&nbsp;<input
+                                        type="text" class="input-text mr10" placeholder="请选择日期"/>
+                                    <a href="#" class="btn btn-default radius">确定</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--筛选结果-->
+                    <div class="select-result">
+                        <dl class="clearfix">
+                            <dt>已选:</dt>
+                            <dd><a href="#">法院：全省<i class="icon-close"></i></dd>
+                            <dd><a href="#">法院：全省<i class="icon-close"></i></a></dd>
+                        </dl>
+                    </div>
+                </div>
+                <!--数据列表1-->
+                <div class="dResult mt20">
+                    <ul class="clearfix">
+                        <li><img src="images/item.png"/></li>
+                        <li><img src="images/item2.png"/></li>
+                        <li><img src="images/item3.png"/></li>
+                        <li><img src="images/item4.png"/></li>
+                    </ul>
+                </div>
+                <!--数据列表2-->
+                <div class="lw-box mt20 clearfix">
+                    <div class="lw-box-tit clearfix mb15">
+                        <h3 class="fl">近一年收结存趋势分析图</h3>
+                        <div class="fr clearfix">
+                            <select class="fl mr10 btn btn-default radius">
+                                <option value="">切换指示</option>
+                            </select>
+                            <div class="btn-group fl">
+                                <a href="#" class="btn btn-primary radius">图表</a>
+                                <a href="#" class="btn btn-default radius">表格</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lw-box-cnt">
+                        <img src="images/chart1.jpg" width="100%"/>
+                    </div>
+                </div>
+                <!--数据列表3-->
+                <div class="clearfix mt20">
+                    <div class="w590 fl">
+                        <div class="lw-box clearfix">
+                            <div class="lw-box-tit clearfix mb10 mt10">
+                                <h3 class="fl">新收案件案由占比分析</h3>
+                                <div class="fr clearfix">
+                                    <select class="fl mr10 btn btn-default radius">
+                                        <option value="">切换指示</option>
+                                    </select>
+                                    <div class="btn-group fl">
+                                        <a href="#" class="btn btn-primary radius">图表</a>
+                                        <a href="#" class="btn btn-default radius">表格</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lw-box-cnt">
+                                <img src="images/chart2.jpg" width="100%"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w590 fr">
+                        <div class="lw-box clearfix">
+                            <div class="lw-box-tit clearfix mb10 mt10">
+                                <h3 class="fl">各指标按法院排行分析</h3>
+                                <div class="fr clearfix">
+                                    <select class="fl mr10 btn btn-default radius">
+                                        <option value="">切换指示</option>
+                                    </select>
+                                    <div class="btn-group fl">
+                                        <a href="#" class="btn btn-primary radius">图表</a>
+                                        <a href="#" class="btn btn-default radius">表格</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lw-box-cnt">
+                                <img src="images/chart3.jpg" width="100%"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--数据列表4-->
+                <div class="lw-box clearfix mt20 mb20">
+                    <div class="lw-box-tit clearfix mb15">
+                        <h3 class="fl">各类案件收结存情况表</h3>
+                        <div class="fr clearfix">
+                            <a href="#" class="btn btn-success radius">导出</a>
+                            <a href="#" class="btn btn-default radius">打印</a>
+                        </div>
+                    </div>
+                    <div class="lw-box-cnt">
+                        <div class="lw-scroll">
+                            <table width="150%" class="lw-table">
+                                <tr>
+                                    <th width="8%">&nbsp;</th>
+                                    <th colspan="4">总计</th>
+                                    <th colspan="4">刑事</th>
+                                    <th colspan="4">行政</th>
+                                    <th colspan="4">执行</th>
+                                    <th colspan="4">信访</th>
+                                    <th colspan="4">其他</th>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">法院</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                    <td>新收</td>
+                                    <td>旧存</td>
+                                    <td>已结</td>
+                                    <td>未结</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">海口法院</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                    <td>986</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">澄迈法院</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                    <td>1005</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">安定法院</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                    <td>1250</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">文昌法院</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                    <td>1850</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">屯昌法院</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                    <td>1341</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">琼海法院</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                    <td>1230</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">万宁法院</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                    <td>1479</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">琼山法院</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                    <td>1151</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">三亚法院</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                    <td>1321</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">通什法院</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                    <td>1453</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">乐东法院</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                    <td>895</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#f3f3f3">合计</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                    <td>12080</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--end-->
+            </div>
+            <!--刑事-->
+            <div class="navcon">2</div>
+            <!--民事-->
+            <div class="navcon">3</div>
+            <!--行政-->
+            <div class="navcon">4</div>
+            <!--执行-->
+            <div class="navcon">5</div>
+            <!--信访-->
+            <div class="navcon">6</div>
+            <!--其他-->
+            <div class="navcon">7</div>
+            <!--end-->
+        </div>
+    </div>
+</div>
+<!--页脚-->
+<script>
+    $(".lw-navcnt").slide({mainCell: '.lw-navcon', titCell: '.lw-nav li', titOnClassName: "current", trigger: "click"});
+</script>
+</body>
+</html>

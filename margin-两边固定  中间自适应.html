@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hoverSlideout Demo</title>
+
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+} 
+.clearFix{
+	clear: both;
+}
+.main {
+ float: left;
+ width: 100%;
+}
+.mainContainer {
+ margin: 0 230px;
+ height: 200px;
+ background: #ddd;
+}
+.left {
+ float: left;
+ margin-right: -100%;
+ width: 230px
+} 
+.right {
+ float: left;
+ margin-left: -230px;
+ width: 230px;
+} 
+.left .inner,
+.right .inner {
+ background: #b5a2e2;
+ margin: 0 10px;
+ height: 200px;
+}
+/*用时记得删除*/
+*{
+	color: #fff;
+	text-align: center;
+}
+</style> 
+</head>
+<body>
+
+<div class="header" style="background-color: #33e4f4; text-align: center; font-size: 33px;color:#fff;padding:15px 10px;margin-bottom: 10px;">margin-两边固定  中间自适应</div>
+<div class="content">
+	<div class="left">
+	 <div class="inner">left content</div>
+	</div>
+	<div class="main">
+		<div class="mainContainer">main content</div>
+	</div>
+	<div class="right">
+	 <div class="inner">right content</div>
+	</div>
+	<div class="clearFix"></div>
+</div>
+	
+<div style="background-color: #33ffa6; text-align: center; font-size: 33px;color:#fff;margin-top: 10px"> footer</div>
+</body>
+</html>

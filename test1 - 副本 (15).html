@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	body{
+		border-top: 1px solid transparent;
+	}
+</style>
+</head>
+<body>
+	<style type="text/css">
+		#t1:target ~ .test{
+			color: red
+		}
+		#t2:target ~ .test{
+			color: blue
+		}
+
+	</style>
+	<div>
+		<div id="t1">111111111</div>
+		<div id="t2">2222222222</div>
+		<p class="test">test</p>
+		<a href="#t1">to 1111111</a>
+		<a href="#t2">to 22222222222</a>
+	</div>
+</body>
+
+</html>

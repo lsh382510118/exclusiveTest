@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/test.js"></script>
+<script type="text/javascript">
+$(function(){
+	startDrag($('.g_b'), $('.g_b'));
+});
+</script> 
+<style type="text/css"> 
+
+.g_a{
+	display:-moz-inline-stack;
+	display:inline-block;
+	border-bottom:1px solid #cccccc;
+	border-top:1px solid #e1e1e1;
+	background:#f9f9f9;
+	text-decoration:none;
+}  
+.g_b{
+	float:left;
+	border-left:1px solid #dadada;
+	border-right:1px solid #cecece;
+	padding:1px 0; margin:0 -1px;
+	position:relative;
+}  
+.g_c{
+	float:left;
+	border-left:1px solid #dadada;
+	border-right:1px solid #cecece;
+	margin:0 -2px; background:#f4f4f4;
+	position:relative;
+}  
+.g_d{display:block; line-height:4px; background:#f7f7f7; border-bottom:4px solid #f6f6f6; border-top:8px solid #f8f8f8;}  
+.g_e{display:block; line-height:16px; border-bottom:4px solid #f2f2f2; border-top:4px solid #fafafa; margin-top:-16px; padding:0px 12px; font-size:12px; color:#666666; cursor:pointer;}  
+.g_a:hover{text-decoration:none; background-color:#f7f7f7; color:#333333;}  
+.g_a:hover .g_c{background-color:#f2f2f2;}  
+.g_a:hover .g_d{border-bottom-color:#f4f4f4; background-color:#f5f5f5; border-top-color:#f7f7f7;}  
+.g_a:hover .g_e{border-bottom-color:#f0f0f0; border-top-color:#f8f8f8;}  
+.yj0{}
+.yj1{}
+.yj2{}
+.yj3{}
+.yj4{}
+.yj5{}
+</style> 
+</head>
+<body>
+
+<a href="javascript:void(0);" class="g_a vm">  
+    <span class="g_b">  
+        <span class="g_c">  
+            <span class="g_d"> </span>  
+            <span class="g_e">就是你了</span>  
+        </span>  
+    </span>  
+</a>
+<div class="d1">
+	<div class="d2">
+		sdf
+	</div>
+</div>
+<div class="yj0">上啦</div>  
+</body>
+</html>

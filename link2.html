@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title>锚点-test</title>
+<script type="text/javascript">
+	wid2=open('link2.html','secLinkWindow','scrollbars=yes,width=250,height=400')
+	function linkToWindow(num){
+		if(window2.document.anchors.length>num){wid2.location.hash=num;}
+		else{alert('么有锚点')；}
+	}
+</script>
+</head>
+<body>
+	<b>链接和锚点</b>
+	<form>
+		<p>1</p>
+		<p>
+			<input type="button" value='0' name='link0_btn' onclick="linkToWindow(this.value)">
+		</p>
+		<p>
+			<input type="button" value='1' name='link0_btn' onclick="linkToWindow(this.value)">
+		</p>
+		<p>
+			<input type="button" value='2' name='link0_btn' onclick="linkToWindow(this.value)">
+		</p>
+		<p>
+			<input type="button" value='3' name='link0_btn' onclick="linkToWindow(this.value)">
+		</p>
+		<p>
+			<input type="button" value='4' name='link0_btn' onclick="linkToWindow(this.value)">
+		</p>
+	</form>
+</body>

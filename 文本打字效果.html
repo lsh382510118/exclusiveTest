@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1>CSS is awesome!</h1>
+<style>
+    @keyframes typing {
+        from { width: 0 }
+    }
+    @keyframes caret {
+         50% { border-color: transparent; }
+     }
+    h1 {
+        width: 15ch; /* 文本的宽度 */
+        white-space:nowrap;
+        overflow: hidden;
+        border-right: .05em solid;
+        animation: typing 6s steps(15),
+        caret 1s steps(1) infinite;
+    }
+</style>
+</body>
+
+</html>

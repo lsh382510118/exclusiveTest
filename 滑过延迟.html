@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<title></title>
+    <style>
+        body{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        input{
+            font: inherit;
+        }
+        .btn-box,.text-box{
+            padding:10px;
+            width: 350px;
+            margin: 50px auto;
+        }
+        .btn{
+            height: 34px;
+            line-height: 34px;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            background-color: #fff;
+            padding: 0 25px;
+            display: inline-block;
+            margin-bottom: 10px;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s ;
+            -ms-transition: all 0.3s ;
+            -o-transition: all 0.3s ;
+            transition: all 0.3s ;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: #1ca9f9;
+            color: #fff;
+        }
+        .text-box{
+            border:1px  solid #e3e3e3;
+        }
+        .t2{
+            background-color: #333;
+            position: fixed;
+            left:20px;
+            top:50px;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }
+        .t2:hover{
+            background-color: #999;
+        }
+        .t1{
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s ;
+            -ms-transition: all 0.3s ;
+            -o-transition: all 0.3s ;
+            transition: all 0.3s ;
+            opacity: 1;
+            background-color: #00c17b;
+            position: fixed;
+            left:20px;
+            top:50px;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+        }
+        .t1.on{
+            visibility: hidden;
+            opacity: 0;
+            border-r
+        }
+
+    </style>
+</head>
+<body>
+<input type="text" value="这只是一个测试">
+    <div class="btn-box">
+        <a class="btn" id="t1">1</a>
+        <a class="btn">2</a>
+        <a class="btn">3</a>
+        <a class="btn">4</a>
+        <a class="btn">5</a>
+        <a class="btn">6</a>
+        <a class="btn">7</a>
+        <a class="btn">8</a>
+    </div>
+    <div class="text-box"></div>
+    <div class="t1"></div>
+    <div class="t2"></div>
+<script type="text/javascript">
+    var jsq;
+    $('.btn').hover(function() {
+        var txt = $(this).text();
+        jsq = setTimeout(function() {
+        $('.text-box').text(txt);
+        }, 300)
+    }, function() {
+        clearTimeout(jsq)
+    })
+    $('#t1').click(function () {
+        $('.t1').toggleClass('on');
+    })
+</script>
+</body>
+</html>

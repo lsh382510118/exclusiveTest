@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.default-btn').click(function(e){
+		btnripple($(this),e)
+	});
+	function btnripple(obj,e){
+		var px=e.offsetX;
+		var py=e.offsetY;
+		$('.btn-ripple').remove();
+		var html = ''+'<div class="btn-ripple" style="left:'+px+'px; top: '+py+'px;"></div>';
+		obj.append(html);
+	}
+	$(window).scroll(function(){
+		var scrollTop = $(window).scrollTop();
+		if(scrollTop>10){
+			$('header').css('margin-top','-60px');
+		}
+		if(scrollTop == 0){
+			$('header').css('margin-top','0px');
+		}
+	})
+});
+</script> 
+<style type="text/css">
+body{
+	background-color: #fff;
+	padding-top: 60px;
+}
+.btnBox{
+	text-align: center;
+	padding: 20px;
+	
+} 
+.default-btn{
+	position: relative;
+    overflow: hidden;
+    padding: .8em 1.2em;
+    text-align: center;
+    border-radius: 6px;
+    color: #fff;
+    background-color: rgba(153, 97, 236,1);
+    font-family: "微软雅黑";
+    border: none;
+    outline: none;
+}
+.default-btn:hover{
+    /*background-color: rgba(153, 97, 236,.8);*/
+    cursor: pointer;
+}
+.btn-ripple{
+	position: absolute;
+	border-radius: 100%;
+    background: transparent;
+	width: 2px;
+	height: 2px;
+    animation: ripple 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@-webkit-keyframes ripple{
+	  0% {box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.3);	}
+	100% {box-shadow: 0 0 0 100px rgba(255, 255, 255, 0);}
+}
+header{
+	height: 60px;
+	background-color: #019F62;	
+	line-height: 60px;
+	transition: all .6s ease-in-out;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	color: #fff;
+	z-index: 99;
+}
+</style> 
+</head>
+<body>
+	<header>
+		头部
+	</header>
+	<div class="btnBox">
+		<button class="default-btn">波纹按钮</button>
+	</div>
+	<div style="height: 700px;"></div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.btn').click(function(){
+		var opj = $('tr.on').clone();
+		$('tr.on').remove();
+		opj.insertBefore($('.loadtable tr').eq(0));	
+	});
+});
+</script> 
+<style type="text/css"> 
+body,html{
+	min-height: 100%
+	padding: 0;
+	margin: 0;
+	background-color: #4d5879;
+}
+table{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	padding-top: 43px;
+}
+td{
+	padding: 12px;
+	border-bottom: 1px solid #e3e3e3;
+	color:#fff;
+}
+tr.on td,td:hover{
+	background-color: #3B4561;
+	cursor: pointer;
+}
+.btn{
+	display: block;
+	line-height: 50px;
+	width: 100%;
+	cursor: pointer;
+}
+.table-title{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+    display: table;
+}
+</style> 
+</head>
+<body>
+<button class="btn">加载更多</button>
+<div>
+	<table class="loadtable">
+		<tr><td>1</td></tr>
+		<tr class="table-title"><td>标题</td></tr>
+		<tr class="on"><td>3</td></tr>
+		<tr><td>4</td></tr>
+		<tr><td>5</td></tr>
+		<tr><td>6</td></tr>
+		<tr><td>7</td></tr>
+		<tr><td>8</td></tr>
+	</table>
+</div>
+
+</body>
+</html>

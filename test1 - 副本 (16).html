@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="css/sctest.css"/> -->
+    <style>
+        .sfq-test-item{
+			width: 300px;
+			height: 200px;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: inline-block;
+			vertical-align: top;
+			cursor: pointer;
+		}
+		.item1{
+			background-image: url(images/sfq-01.png);
+		}
+		.item2{
+			background-image: url(images/sfq-02.png);
+		}
+		.item3{
+			/*background-image: url(images/sfq-03.png);*/
+		}
+    </style>
+</head>
+<body>
+	<div class="sfq-test">
+		<div class="sfq-test-item item1 on"></div>
+		<div class="sfq-test-item item2"></div>
+		<div class="sfq-test-item item3"></div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script>
+	var sfq_data = [],
+			pci_num=3;
+	for(var i=1;i <= pci_num;i++){
+		var src = 'images/sfq-0'+i+'.png';
+		sfq_data.push(src);
+		var hover_sec = 'images/sfq-on-0'+i+'.png';
+		sfq_data.push(hover_sec);
+	}
+//	初始化
+	$(sfq_data).each(function(i,obj){
+//		console.info(obj)
+//		console.info((i % 2) );
+		if((i % 2) == 0){
+			var index =  i/2;
+			$('.sfq-test-item').eq(index).css('background-image','url('+obj+')');
+		}
+	});
+//	绑定时间
+	$('.sfq-test-item').hover(function () {
+				var index = $(this).index();
+		var len = $('.sfq-test-item').length;
+		var num = index * 2 +1;
+		for(var i = 0;i <len;i++ ){
+			$('.sfq-test-item').eq(i).css('background-image','url('+sfq_data[i * 2]+')' );
+		}
+		console.info(12);
+		$(this).css('background-image','url('+sfq_data[num]+')' );
+		} )
+</script>
+</body>
+
+</html>

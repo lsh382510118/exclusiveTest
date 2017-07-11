@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="js/jQuery-v1.11.3.js"></script>
+    <script src="js/js.js"></script>
+</head>
+<body>
+<div id="yourId" class="jalendar">
+    <div class="added-event" data-date="12-04-2015" data-title="bbbbbbbbbb"></div>
+    <!--<div class="added-event"   data-date="11-06-2017"  data-title="XXXXXXXXXX" data-myid="ggg"></div>-->
+    <div class="added-event" data-date="12-06-2017" data-title="bbbbbbbbbb" data-myid="bb" data-fun="'func()"></div>
+    <div class="added-event" data-date="12-08-2016" data-title="bbbbbbbbbb"></div>
+</div>
+<script >
+    $('#yourId').jalendar({
+//        customDay: '05/06/2017',
+        color: '#577e9a', // Unlimited
+        color2: '#57c8bf', // Unlimited
+        lang: 'ZH'
+//        type: "event",
+//        sundayStart: true,
+//        done:function (e) {
+//            console.info(1);
+//            console.info($(this));
+//        }
+//        dateType:"yyyy-mm-dd"
+    });
+//    $('.close-button').html('关闭');
+    $('#yourId').on('click','#bb',function () {
+        console.info(11);
+    })
+</script>
+</body>
+</html>

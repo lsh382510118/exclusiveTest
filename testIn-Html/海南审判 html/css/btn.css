@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*按钮*/
+.btn{font-size: 14px;height: 28px;line-height: 28px;padding:  0 20px; }
+.btn{display:inline-block;cursor:pointer;text-align:center; font-weight:400;white-space:nowrap;vertical-align: middle;*zoom:1;-webkit-transition:background-color .1s linear;-moz-transition:background-color .1s linear;-o-transition:background-color .1s linear;transition:background-color .1s linear}
+a.btn:hover,a.btn:focus,a.btn:active,a.btn.active,a.btn.disabled,a.btn[disabled]{text-decoration:none}
+.btn:active,.btn.active{background-color:#ccc}
+.btn:first-child{*margin-left:0}
+.btn.active,.btn:active{-moz-box-shadow:0 1px 8px rgba(0, 0, 0, 0.125) inset;-webkit-box-shadow:0 1px 8px rgba(0, 0, 0, 0.125) inset; box-shadow:0 1px 8px rgba(0, 0, 0, 0.125) inset}
+ 
+/*默认——灰色 通常用于取消*/
+.btn-default{ background-color:#e6e6e6;border: 1px solid #ccc;}
+.btn-default:hover{color:#333;background-color:#c7c7c7;border-color:#c7c7c7}
+
+ 
+/*主要——主色 通常用于确定、提交、购买、支付等*/
+.btn-primary{color:#fff;background-color:#1ca9f9; border:1px solid #1ca9f9;}
+.btn-primary:hover{color:#fff;background-color:#2eb0fa;border-color:#2eb0fa}
+
+/*成功*/
+.btn-success{color:#fff;background-color:#3fc8a5; border:1px solid #3fc8a5;}
+.btn-success:hover{color:#fff;background-color:#45d1ad;border-color:#45d1ad}
+/*其他按钮*/ 
+.btn-default-outline{border: 1px solid #ccc;background-image:url(../images/check.png); background-position: right center; background-repeat: no-repeat; }
+.btn-primary-outline{ color:#1ca9f9;border:1px solid #1ca9f9;background-image:url(../images/check_on.png); background-position: right center; background-repeat: no-repeat; }
+.btn-default-outline,.btn-primary-outline{ width: 60px;padding: 0; padding-left: 10px; text-align: left; }
+ 
+/*禁用状态*/
+.btn.disabled{cursor:not-allowed;background-image:none;opacity:.65;filter:alpha(opacity=65);box-shadow:none; pointer-events:none}
+
+.btn-group{ font-size:0}
+.btn-group .btn{ margin-left:-1px}
+.btn-group .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){ border-radius:0}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){border-bottom-right-radius: 0;border-top-right-radius: 0}
+.btn-group > .btn:last-child:not(:first-child),.btn-group > .dropdown-toggle:not(:first-child) {border-bottom-left-radius: 0;border-top-left-radius: 0}
+.radius { border-radius: 4px;}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>GoogleLogo</title>
+
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+	.g-logo{
+		border-top:200px solid #ea4335;
+		border-left:200px solid #fbb605;
+		border-bottom:200px solid #34a853;
+		border-right:200px solid #4285f4;
+		display: inline-block;
+		margin: 100px auto;
+		border-radius: 50%;
+		position: relative;
+	}
+	.g-logo:before{
+		content: '';
+		position: absolute;
+		left: 50%;
+		border-top: 200px solid transparent;
+		border-right: 200px solid #fff;
+		top:-200px;
+	}
+	.hole{
+		position: absolute;
+		width: 320px;
+		height: 320px;
+		border-radius: 50%;
+		background-color: #fff;
+		left: 50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-160px;
+	}
+	.hole:after{
+		position: absolute;
+		height: 40px;
+		content: '';
+		width: 160px;
+		left: 50%;
+		top: 50%;
+		background-color: #4285f4;
+	}
+</style> 
+</head>
+<body>
+<div class="g-logo">
+	<div class="hole"></div>
+</div>
+</body>
+</html>

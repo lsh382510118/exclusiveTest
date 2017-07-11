@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+});
+</script> 
+<style type="text/css"> 
+.cir-shadow{
+    padding: 0;
+    width: 420px;
+    height: 420px;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.cir-main{
+    position: relative;
+  margin:200px auto;
+  font-size: 25px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+/*  -webkit-animation: load5 10s infinite ease;
+  animation: load5 10s infinite ease;*/
+  /*半径r=200,30°位置（100,173.205）*/
+  box-shadow: 0em -200px 0em 0px #fff, 100px -173.205px 0 0em #fff, 173.205px -100px 0 0em #fff, 
+  200px 0em 0 0em #fff, 100px 173.205px 0 0em #fff, 173.205px 100px 0 0em #fff,
+  0em 200px 0em 0em #fff, -100px -173.205px 0 0em #fff, -173.205px -100px 0 0em #fff, 
+  -200px 0em 0 0em #fff, -100px 173.205px 0 0em #fff, -173.205px 100px 0 0em #fff;
+  -webkit-transition: 1s all cubic-bezier(.24,1.5,.2,.9);
+  transition: 3s all cubic-bezier(.24,1.5,.2,.9);
+}
+.cir-main p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fac24f;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid transparent;
+    text-shadow: 0 0 rgba(255,255,255,.4);
+   -webkit-transition: 1s all ease;
+   transition: 1s all ease;
+   border-radius: 50%;
+}
+.cir-shadow:hover .cir-main{
+    
+    box-shadow: 
+    0em -200px 0em 0px #fff, -100px -100px 2px 5px #fff, 83px -38px 1px 7px #fff, 
+    200px 0em 0 0em #fff, 100px -100px 2px 5px #fff, 68px 58px 1px 7px #fff,
+    0em 200px 0em 0em #fff, -100px 100px 2px 5px #fff, -46px -83px  1px 7px #fff, 
+    -200px 0em 0 0em #fff, 100px 100px 2px 5px #fff, -84px 30px 1px 7px #fff;
+}
+.cir-shadow:hover .cir-main p{
+    background-color: rgba(230,230,230,.5);
+    color: #9961ec;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    line-height: 32px;
+    -webkit-transform: scale(4);
+    transform: scale(4);
+    border: 3px solid #bda4fc;
+}
+</style> 
+</head>
+<body style="padding-top: 100px;background-color: #333;">
+
+<div class="cir-shadow">
+    <div class="cir-main">
+        <p>月</p>
+    </div>
+</div>
+</body>
+</html>

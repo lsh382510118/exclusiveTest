@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+});
+</script> 
+<style type="text/css"> 
+.dd{
+	width: 0;
+	margin:100px auto;
+	border-style: solid dotted;
+	border-width:90px;
+	border-color: #555 #f8f8f8;
+	border-radius: 119px;
+	position: relative;
+}
+.dd:before{
+	content: '';
+	position: absolute;
+	width: 0;
+	border-style: solid dotted;
+	border-width:60px;
+	border-color: #f8f8f8 #555;
+	border-radius: 119px;
+	top: 0;
+	margin-left: -60px;
+	margin-top: -60px;
+	left: 0;
+}
+.dd:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	border-style: solid dotted;
+	border-width:30px;
+	border-color: #555 #f8f8f8;
+	border-radius: 119px;
+	top: 0;
+	margin-left: -30px;
+	margin-top: -30px;
+	left: 0;
+}
+.aa{
+	width: 200px;
+	height: 100px;
+	margin:50px auto;
+	background-color: #447239;
+	border: 1px solid #e3e3e3;
+	border-radius: 6px;
+	position: relative;
+	overflow: hidden;
+}
+.aa:after{
+	content: '';
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: #000;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	margin-left: -40px;
+	margin-top: -40px;
+	-webkit-transition: .4s all ease-in-out;
+	transition: .4s all ease-in;
+/*	-webkit-transform: scale(0);
+	transform: scale(0);*/
+/*	opacity: 0;*/
+	box-shadow: 0 0 0 0 rgba(255,255,255,0.2);
+}
+.aa:focus:after{
+	content: '';
+	display: block;
+/*	-webkit-transform: scale(0);
+	transform: scale(5);*/
+	box-shadow: 0 0 0 30px transparent
+}
+.radial{
+    display:block; 
+    border-radius: 6px;
+    width:150px; 
+    height:150px;
+    margin: 80px auto; 
+    border:1px solid #fff; 
+    background-image:-webkit-gradient(radial, 45 45, 10, 52 50, 30, from(#A7D30C), to(rgba(1,159,98,0)), color-stop(90%, #019F62)), 
+        -webkit-gradient(radial, 105 105, 20, 112 120, 50, from(#ff5f98), to(rgba(255,1,136,0)), color-stop(75%, #ff0188)), 
+        -webkit-gradient(radial, 95 15, 15, 102 20, 40, from(#00c9ff), to(rgba(0,201,255,0)), color-stop(80%, #00b5e2)), 
+        -webkit-gradient(radial, 0 150, 50, 0 140, 90, from(#f4f201), to(rgba(228, 199,0,0)), color-stop(80%, #e4c700));
+}
+.saf{
+	margin: 60px auto;
+	width:400px;
+	height:150px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#ffff00)); 
+	background-size:20px;
+	-webkit-background-size:20px;
+
+}
+.con{
+	margin: 40px auto;
+	width: 60%;
+}
+.con ul{
+	counter-reset: sec;
+}
+.con ul li{
+	counter-increment:sec;
+	color: #fff;
+}
+.con ul li:before{
+	content:counter(sec);}
+</style> 
+</head>
+<body>
+<div class="dd"></div>
+<div class="aa"></div>
+<div class="radial"></div>
+<div class="saf"></div>
+<div class="con">
+	<ul>
+		<li style="color: #fff">sdfasf</li>
+		<li>sdfasf</li>
+		<li>sdfasf</li>
+		<li>sdfasf</li>
+		<li>sdfasf</li>
+		<li>sdfasf</li>
+	</ul>
+</div>
+<time style="width:200px;height: 200px;margin: 20px auto;display: block;"datetime="1990-08-11T20:00+09:00">
+	shengri
+</time>
+</body>
+</html>

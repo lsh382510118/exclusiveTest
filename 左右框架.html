@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title>锚点-test</title>
+<script type="text/javascript">
+	wid2=open('link2.html','secLinkWindow','scrollbars=yes,width=250,height=400')
+	function linkToWindow(num){
+		if(window2.document.anchors.length>num){wid2.location.hash=num;}
+		else{alert('么有锚点')；}
+	}
+</script>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0
+}
+.lr-box{
+	position: relative;
+	height: 300px;
+
+}
+.box-right{
+	width: 400px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background-color: #ddd;
+}
+.box-left{
+	width:100%;
+	height: 100%;
+	padding-right: 400px;
+	background-color: #f00;
+	box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+	<div class="lr-box">
+		<div class="box-left"></div>
+		<div class="box-right"></div>
+	</div>
+</body>

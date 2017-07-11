@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="css/sctest.css"/> -->
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f5f5f5;
+        border-bottom: 1px solid transparent;
+        margin-top: -1px;
+
+    }
+    .boxshadow{
+        height: 100px;
+        width: 300px;
+        margin: 20px auto;
+        background-color: #58a;
+        box-shadow: 0px 0px 4px 0px rgba(30,30,30,0.9);
+    }
+    #head-more{
+        padding: 0px 20px;
+        height:36px;
+        line-height: 36px;
+        width: 200px;
+        margin:20px auto;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #e3e3e3; 
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+
+    <div id='head-more'>head-more</div>
+<div class="layer-wrap">
+    <div class="layer-main">
+        <div class="layer-mark mark-in"></div>
+        <div class=" layer-index-more index-more-in">
+            <div class="layer-index-more-wrap">
+                <a href="#" class="layer-index-more-item">设置</a>
+                <a href="#" class="layer-index-more-item">数据统计</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <style>
+        .layer-wrap {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            /*display: none;*/
+            overflow: hidden;
+        }
+
+        .layer-main {
+            position: relative;
+            height: 100%;
+        }
+
+        .layer-mark {
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.4);
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+
+        .layer-mark.mark-in {
+            -webkit-animation: mark-in .6s ease-in-out;
+            animation: mark-in .6s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;;
+        }
+
+        .layer-mark.mark-out {
+            -webkit-animation: mark-out .6s ease-in-out;
+            animation: mark-out .6s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;;
+        }
+
+        .layer-index-more {
+            position: absolute;
+            right: 1rem;
+            top: 2rem;
+            background-color: #fff;
+            padding: 0.5rem 0;
+            border-radius: 0.15rem;
+            box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .layer-index-more.index-more-in {
+            -webkit-animation: index-more-in .6s ease-in-out;
+            animation: index-more-in .6s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;;
+        }
+
+        .layer-index-more.index-more-out {
+            -webkit-animation: index-more-out .6s ease-in-out;
+            animation: index-more-out .6s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;;
+        }
+
+        .layer-index-more-wrap{
+            position: relative;
+        }
+        .layer-index-more-wrap:before{
+            content: '';
+            position: absolute;
+            top:-1rem;
+            right: 0.5rem;
+            border-bottom:0.5rem solid #fff;
+            border-left:0.5rem solid transparent;
+            border-right:0.5rem solid transparent;
+            filter: drop-shadow(0px -2px 1px rgba(0,0,0,.3));
+        }
+        .layer-index-more-item {
+            display: block;
+            height: 2rem;
+            font-size: 0.75rem;
+            line-height: 2rem;
+            color: #666;
+            padding: 0 1rem;
+            text-decoration: none;
+        }
+
+        .layer-index-more-item + .layer-index-more-item {
+            border-top: 1px solid #e3e3e3;
+        }
+
+        @keyframes index-more-in {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+            30% {
+                top: 20px;
+                opacity: 0.6;
+            }
+            100% {
+                top: 3rem;
+                opacity: 1;
+            }
+        }
+
+        @keyframes index-more-out {
+            0% {
+                top: 50px;
+                opacity: 1;
+            }
+            30% {
+                top: 20%;
+                opacity: 0.6;
+            }
+            90% {
+                top: 70%;
+                opacity: 0;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        @keyframes mark-in {
+            0% {
+                opacity: 0;
+            }
+            30% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes mark-out {
+            0% {
+                opacity: 1;
+                left: 0;
+            }
+            30% {
+                opacity: 0.6;
+                left: 30%;
+            }
+            99% {
+                left: 100%;
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+    </style>
+
+<script src='js/jquery.min.js'></script>
+    <script>
+    $('#head-more').click(function () {
+        $('.layer-wrap').show();
+        $('.layer-mark').removeClass('mark-out').addClass('mark-in');
+        $('.layer-index-more').removeClass('index-more-out').addClass('index-more-in');
+    });
+    $('.layer-mark').click(function () {
+        $('.layer-mark').removeClass('mark-in').addClass('mark-out');
+        $('.layer-index-more').removeClass('index-more-in').addClass('index-more-out');
+        setTimeout(function () {
+            $('.layer-wrap').hide();
+        }, 600)
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hoverSlideout Demo</title>
+<script src="js/jquery.min.js"></script>
+
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	} 
+	.testBox{
+		padding: 50px;
+		width: 500px;
+	}
+	.moreShow{
+		position: relative;
+	}
+	.more{
+		text-decoration: none;
+		display: inline-block;
+		padding: 0 15px;
+		line-height: 44px;
+		border: 1px solid #e3e3e3;
+		color: #666;
+		position: relative;
+		z-index: 2;
+	}
+	.more:hover{
+		color: #333;
+		/*background-color: #f8f8f8;*/
+		border-bottom: 1px solid #fff;	
+	}
+	.more:hover + .moreMenu{
+		height: 181px;
+		border: 1px solid #e3e3e3;
+	}
+	.moreMenu{
+		position: relative;
+		z-index: 1;
+		top: -1px;
+		overflow: hidden;
+		list-style: none;
+		width: 240px;
+		height: 0px;
+	}
+	.moreMenu li{
+		padding-left: 15px;
+		line-height: 44px;
+		border-bottom: 1px solid #e3e3e3;
+
+	}
+	.moreMenu li:hover{
+		background-color: #fafafa;
+		cursor: pointer;
+	}
+</style> 
+</head>
+<body>
+<div class="testBox">
+	<div class="moreShow"> <a href="#" class="more">更多方式</a>
+		<ul class="moreMenu">
+			<li>aaaa</li>
+			<li>bbb</li>
+			<li>cc</li>
+			<li>ddd</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

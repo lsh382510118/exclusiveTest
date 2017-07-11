@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title> demo</title>
+	<style>
+	*{
+		
+	}
+	.box{
+		width: 460px;
+		height: 40px;
+		border: 1px solid #e3e3e3;
+		text-align: justify;
+		text-align-last: justify;
+	}
+	.box .i{
+			display: inline-block;
+			height:100%;
+			background-color: #666;
+			width: 40px;
+			border-radius: 50%;
+			line-height: 40px;
+			color: #fff;
+			text-align: center;
+		}
+	.box2{
+		width: 460px;
+		height: 40px;
+		border: 1px solid #e3e3e3;
+		text-align: justify;
+		font-size: 0;
+	}
+	.box2:after{
+		content: '';
+		width: 100%;
+		display: inline-block;
+	}
+	.box2 .i{
+		font-size: 12px;
+		display: inline-block;
+		height:100%;
+		background-color: #666;
+		width: 40px;
+		border-radius: 50%;
+		line-height: 40px;
+		color: #fff;
+		text-align: center;
+
+	}
+	</style>
+</head>
+<body>
+<!--兼容到IE8-->
+<div class="box">
+	<span class="i">1</span>
+	<span class="i">2</span>
+	<span class="i">3</span>
+	<span class="i">4</span>
+	<span class="i">5</span>
+	<span class="i">6</span>
+</div>
+<!--兼容到IE7  bu不支持为元素after-->
+<div class="box2">
+	<span class="i">1</span>
+	<span class="i">2</span>
+	<span class="i">3</span>
+	<span class="i">4</span>
+	<span class="i">5</span>
+	<span class="i">6</span>
+</div>
+</body>
+</html>

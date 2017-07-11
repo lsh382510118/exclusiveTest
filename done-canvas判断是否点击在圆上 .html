@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script src="js/jquery.min.js"></script>
+<style type="text/css">
+
+</style> 
+</head>
+<body>
+	<canvas id="canvas">你的浏览器不支持canvas！</canvas>
+	<div id="result">点击方块内外查看效果</div>
+<script>
+var canvas = document.getElementById("canvas"),
+		result = document.getElementById("result"),
+		ctx = canvas.getContext("2d");
+
+		ctx.beginPath();
+		ctx.rect(0,0,100,100);
+		ctx.fill();
+
+		canvas.addEventListener("click", function(ev){
+			result.innerHTML = ctx.isPointInPath(ev.layerX, ev.layerY) ? "点在方块上" : "点在方块外";});
+</script>
+</body>
+</html>

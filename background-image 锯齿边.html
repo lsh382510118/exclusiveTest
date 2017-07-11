@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<style type="text/css">
+* {
+  padding: 0;
+  margin: 0;
+}
+.demo {
+  list-style: none;
+  width: 100%;
+  height: 180px;
+  text-align: center;
+}
+.demo li {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  margin-right: 3%;
+  background: #f60;
+  display: inline-block;
+}
+.demo li:before, .demo li:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  display: block;
+  width: 10px;
+  height: 100%;
+  margin-top: 20px;
+  background-size: 20px 10px;
+}
+.demo li:before {
+  left: -10px;
+  background-color: #fff;
+  background-position: 100% 35%;
+  background-image: linear-gradient(-45deg, #f60 25%, transparent 25%, transparent), 
+                  linear-gradient(-135deg, #f60 25%, transparent 25%, transparent), 
+                  linear-gradient(-45deg, transparent 75%, #f60 75%), 
+                  linear-gradient(-135deg, transparent 75%, #f60 75%);
+}
+.demo li:after {
+  right: -10px;
+  background-color: #f60;
+  background-position: 100% 15%;
+  background-image: linear-gradient(-45deg, #fff 25%, transparent 25%, transparent), 
+                 linear-gradient(-135deg, #fff 25%, transparent 25%, transparent), 
+                 linear-gradient(-45deg, transparent 75%, #fff 75%), 
+                 linear-gradient(-135deg, transparent 75%, #fff 75%);
+}
+.ddd{
+	height: 300px;
+	position: relative;
+	background-color: green;
+}
+.ddd:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    /* background-image: -webkit-radial-gradient(red 5%, green 15%, blue 60%); */
+    background-image: radial-gradient(white 00%, white 50%, transparent 50%,transparent 100%);
+    background-repeat: repeat-x;
+    background-size: 28px 72%;
+    background-position: 0px 25px;
+}
+</style>
+</head>
+<body>
+<ul class="demo">
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<div class="ddd"></div>
+</body>
+</html>

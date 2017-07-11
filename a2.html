@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>无缝动画</title>
+  <style>
+    *{padding:0; margin:0; border:0; list-style:none;}
+    body{ background:black;}
+    .box{ width:1000px; height:330px; margin:100px auto; border: 1px solid red; position:relative; overflow:hidden;}
+    .box ul{ width:9999px; position:absolute; left:0; top:0;}
+    .box li{ float:left; cursor:pointer;}
+  </style>
+  <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var num=0;
+      var timer=null;
+      function  wufeng() {
+        clearInterval(timer);
+        timer=setInterval(function () {
+          num-=5;
+          if(num<-2500){
+            num=0;
+          };
+          $('.box ul').css('left',num);
+        },30);
+      };
+
+      wufeng();
+
+
+      $('.box ul li').hover(function () {
+        $(this).siblings().stop().fadeTo(300,0.3);
+        clearInterval(timer);
+      },function () {
+        $('.box ul li').stop().fadeTo(300,1);
+        wufeng();
+      })
+    });
+  </script>
+</head>
+<body>
+<div class="box">
+  <ul>
+    <li><img src="http://dmr.nosdn.127.net/jJt7Csxw5D6pch6uv9XMDQ==/6896093022457583125.jpg"/></li>
+    <li><img src="http://imgres.roboo.com/group4/M01/87/02/wKhkDVd8qyaAcDCZAAA5UFD-JMc269.jpg"></li>
+    <li><img src="http://img2.cache.netease.com/ent/2016/4/29/2016042909241928fdc_550.jpg"></li>
+    <li><img src="http://www.webi.wang/uploads/allimg/150509/091T16254-1.jpg"></li>
+    <li><img src="http://upload.cbg.cn/2016/0928/1475056392780.jpg"></li>
+    <li><img src="http://dmr.nosdn.127.net/jJt7Csxw5D6pch6uv9XMDQ==/6896093022457583125.jpg"/></li>
+    <li><img src="http://imgres.roboo.com/group4/M01/87/02/wKhkDVd8qyaAcDCZAAA5UFD-JMc269.jpg"></li>
+  </ul>
+</div>
+</body>
+</html>
+
+

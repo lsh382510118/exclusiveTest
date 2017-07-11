@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body style="text-align:center;">
+    <div style="margin-top:150px;"> 
+	    <img src="pnp4nagios-300x163.jpg" id="images"> 
+	    <img src="pnp4nagios-300x163.jpg" id="images1"> 
+		<img src="pnp4nagios-300x163.jpg" id="images2"> 
+	</div> 
+	<div style="margin-top:130px;">
+	    <input type='text' value="" id="angel" size="4">
+	    <button id='button'>我转</button>
+    </div>
+    <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQueryRotate.2.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#images").rotate(45);
+		var value = 0
+		$("#images1").rotate({ 
+		   bind: 
+		     { 
+		        mouseover: function(){
+		            value +=90;
+		            $(this).rotate({ animateTo:value})
+		        }
+		     } 
+		});
+		$('#button').click(function(){
+		   $("#images1").rotate({animateTo:parseInt($('#angel').val())});
+		});
+		function rotation (){
+		   $("#images2").rotate({
+	 		  angle:0, 
+		      animateTo:360, 
+		      callback: rotation,
+		      easing: function (x,t,b,c,d){
+		          return c*(t/d)+b;
+		      }
+		   });
+		}
+		rotation();	
+	});	
+</script>
+</body>
+</html>

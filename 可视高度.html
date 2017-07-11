@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	console.info('可视区高度'+document.body.clientHeight);
+	console.info('可视区高度(包含边和滚动条)'+document.body.clientHeight);
+	console.info('页面总高'+document.body.scrollHeight);
+	console.info('有滚动条的时候，乡下拖动滚动条，上方不显示的那部分高度'+document.body.scrollTop);
+	console.info('浏览器窗口的内部高度'+window.innerHeight);
+	console.info('可视区高度'+document.body.clientHeight);
+	console.info('可视区高度'+document.body.clientHeight);
+});
+</script> 
+<style type="text/css">
+.radio-test{
+	margin-top: 20px;
+	padding:20px auto;
+}	
+input[type="radio"]{
+	-webkit-appearance: none;
+	appearance: none;
+	font-family: "icon" !important;
+	border: none;
+	color: #808080;
+	outline: 0;
+	background:none;
+}
+
+input[type="radio"]:checked:before {
+	content: "\e619";
+}
+.radio-test label{
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	height: 50px;
+	line-height: 50px;
+}
+.radio-test label input[type='radio']{
+	/*display: block;*/
+	/*width: 3em;*/
+	font-size: 2em;
+	/*position: relative;*/
+    color: #fff;
+    line-height: 50px;
+}
+input[type="radio"]:before {
+	content: "\e619";
+	/*position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -1em;*/
+}
+.radio-box{
+	display: block;
+	width: 2em;
+	text-align:center;
+	color: #fff;
+    height: 100%;
+    color: #fff;
+}
+.data-info{
+	-webkit-box-flex: 1;
+			box-flex: 1;
+	text-align: left;
+	padding-left: 8px;
+	background-color: rgba(255,255,255,.7);
+			
+}
+</style>
+<style type="text/css"> 
+
+</style> 
+</head>
+<body>
+<div class="radio-test">
+	<label>
+		<div class="radio-box"><input type="radio" /></div>
+		<div class="data-info">信息</div>
+	</label>
+</div>
+</body>
+</html>

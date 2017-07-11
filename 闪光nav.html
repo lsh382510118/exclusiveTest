@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>hoverSlideout Demo</title>
+<!-- <link rel="stylesheet" type="text/css" href="css/css.css"> -->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+});
+</script> 
+<style type="text/css"> 
+li{
+    list-style-type: none;
+}
+body{
+	background-color: #fafafa;
+	font-family: '微软雅黑';
+	margin:0;
+}
+.test-box{
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    background-color: #000;
+    -webkit-transition:1s all ease-in-out;
+    transition:1s all ease-in-out;
+}
+.test-box:hover{
+    background: #aaa;
+}
+.acticle{
+    width: 600px;
+    display: -webkit-box;
+    display: box;
+    margin: auto;
+    background-color: #ccc;
+    padding: 5px;
+    height: 30px;
+}
+.acticle li{
+    -webkit-box-flex:1;
+    box-flex:1;   
+    height: 30px;
+    line-height: 30px;
+    background: #bda4fc;  
+    border-right: 1px solid #f6f6f6;
+    color: #fff;
+    font-size: .8em;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition:.7s all cubic-bezier(0.6, 2, 0.3, 0.8);;
+    transition:.7s all cubic-bezier(0.6, 2, 0.3, .7);
+    /*-webkit-transition:.7s ease-in-out;
+    transition:.7s all ease-in-out;*/
+}
+.acticle li:last-child{
+    border-right: 0px;
+}
+.acticle li:hover{
+    box-flex:1;
+    height: 160px;
+    background: #ac2aa1;  
+}
+.act{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,.0) 0%,rgba(255,255,255,.2) 70%,rgba(255,255,255,.3) 100%);
+    transition:.2s all ease-in;
+}
+.acticle li:hover .act{
+    left: 100%;
+}
+.sdsddd{
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid #00008B;
+}
+.aasdfct{
+	height: 2000px;
+}
+</style> 
+</head>
+<body>
+<!-- <div class="test-box">
+</div> -->
+<button class="ss">TOP</button>
+<ul class="acticle">
+    <li>
+        <div class="act"></div>
+        <p>人家人家人家人家</p>
+        <p>人家人家人家人家</p>
+        <p>人家人家人家人家</p>
+        <p>人家人家人家人家</p>
+    </li>
+    <li>看不看不看不看不</li>
+    <li>图片图图片</li>
+    <li>啥啥啥啥</li>
+</ul>
+<div class="xx" style="width: 300px;height: 20px;border-radius: 4px 0;background-color: #ff0;margin: 30px;">
+    
+</div>
+<div class="sdsddd">
+	<div class="aasdfct">
+		
+	</div>
+</div>
+<script type="text/javascript">
+        console.info($(window).scrollTop());
+    $(".ss").click(function(){
+
+    })
+    $('.sdsddd').scroll(function(){
+      var scrollTop = $('.sdsddd').scrollTop();
+        console.info(scrollTop);
+    });
+    $('body').scroll(function(){
+        console.info(1);
+        console.info($(window).scrollTop());
+    })
+</script>
+</body>
+</html>

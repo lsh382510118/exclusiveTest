@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script src="https://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+
+
+
+
+</head>
+
+<body ng-app="ngRouteExample" class="ng-scope">
+<div>
+	<div id="navigation">
+		<a href="#/a4">a44444444444444</a>
+		<a href="#/a3">About</a>
+	</div>
+
+	<div ng-view=""></div>
+</div>
+<script type="text/javascript">
+	angular.module('ngRouteExample', ['ngRoute'])
+			.config(function ($routeProvider) {
+				$routeProvider.
+				when('/a4', {
+					templateUrl: 'testIn-Html/a4.html',
+					controller: 'a4'
+				}).
+				when('/a3', {
+					templateUrl: 'testIn-Html/a3.html',
+					controller: 'AboutController'
+				}).
+				otherwise({
+					redirectTo: 'a4'
+				});
+			});
+</script>
+</body>
+</html>

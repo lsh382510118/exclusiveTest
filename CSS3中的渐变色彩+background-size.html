@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gradient</title>
+	<style type="text/css">
+		#main {
+			margin:0 auto;
+			width:700px;
+		}
+		p {
+			height: 150px;
+			line-height: 150px;
+			text-align:center;
+			font-size:24px;
+			color:#fff;
+		}
+		.redia_top {
+			background-image:linear-gradient(to top, red,orange,yellow,green,blue,indigo,purple);
+		}
+		.redia_left {
+			background-image:linear-gradient(to left, red,orange,yellow,green,blue,indigo,purple);
+		}
+		.redia_right {
+			background-image:linear-gradient(to right, red,orange,yellow,green,blue,indigo,purple);
+		}
+		.redia_bottom {
+			background-image:linear-gradient(to bottom, red,orange,yellow,green,blue,indigo,purple);
+		}
+		.redia_top_right {
+			background-image:linear-gradient(to top right, red,orange,yellow,green,blue,indigo,purple);
+		}
+		.redia_top_left {
+			background-image:linear-gradient(to top left, red,orange,yellow,green,blue,indigo,purple);
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<p class="redia_top">background-image:linear-gradient(to bottom, #fff, #000);</p>
+	<p class="redia_right">第一个参数省略时，默认为“180deg”，等同于“to bottom”。
+		</p>
+	<p class="redia_left">第二个和第三个参数，表示颜色的起始点和结束点，可以有多个颜色值。</p>
+	<p class="redia_bottom">从上向下</p>
+	<p class="redia_top_right">左下角向右上角</p>
+	　<p class="redia_top_left">右下角向左上角</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body,html{
+            min-height:100%;
+        }
+        body{
+            min-width: 1000px;
+            background-image: linear-gradient(45deg,#ece0f4 25%,#fff 0,#fff 50%,#ece0f4 0,#ece0f4 75%,#fff 0);
+            background-attachment:fixed; 
+            /*filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#000000", EndColorStr="#ffffff");*/
+            /*background-size:500px 500px;*/
+        }
+        .title{
+            height: 100px;
+            line-height:100px;
+            padding-left:20px;
+            color: #88a;
+            background-color: #555;
+            text-shadow: 0 -1px 1px rgba(0,0,0,.8);
+        }
+        .main{
+            width: 600px;
+            background-color: rgba(30,30,30,0.7);
+            margin: 20px auto;
+            color: #fff;
+            padding: 30px;
+        }
+        .panel{
+        }
+        input{
+            font: inherit;
+        }
+        .panel input{
+            height: 44px;
+            line-height:44px;
+            outline:none;
+            border: none;
+            text-indent: 0.5em;
+            background-color: rgba(10,10,10,0.8);
+            font-size: 16px;
+            color: #fff;
+            -webkit-transition: all 0.4s;
+            transition: all 0.4s ;
+        }
+        .change-wrap input{
+            width: 160px;
+            margin-right:0.5em;
+        }
+        .panel input::-webkit-input-placeholder{
+            color: #ccc;
+            font-size: 12px;
+        }
+        .count-ppi-input{
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+        .count-ppi-input + .count-ppi-input{
+            border-top:1px solid #333;
+        }
+        .count-ppi-input:hover::-webkit-input-placeholder{
+            color: #fff;
+        }
+        .count-ppi-input:focus{
+            text-indent: 1em;
+            background-color: rgba(10,10,10,1);
+        }
+        .ppi{
+            font-weight: bold;
+            height: 100px;
+            width: 100px;
+            margin:20px auto 0;
+            border-radius: 50%;
+            text-align: center;
+            background-image: linear-gradient(to bottom,transparent 0,transparent 50%,#333 50%,#333 0 );
+            color: #f5f5f5;
+            line-height: 45px;
+            font-size: 30px;
+            border: 4px  solid #333;
+        }
+        .ppi-v{
+            font-size: 18px;
+            text-shadow: 0 1px 1px rgba(255,255,255,.4);
+            color: #fff;
+        }
+        .flex{
+            display: flex;
+            display: -webkit-flex;
+            align-items: stretch;
+            -webkit-align-items: stretch;
+        }
+        .panel-l{
+            flex: 1;
+            -webkit-flex: 1;
+        }
+        .panel-r{
+            width: 200px;
+        }
+        button{
+            outline: none;
+            border: none;
+            background-color: #73b7b3;
+            color: #fff;
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s ;
+            display: block;
+            width: 100%;
+            margin: 15px 0;
+            border-radius: 6px;
+            height: 50px;
+            line-height:50px;
+            box-shadow: 0 5px 0 #254442;
+        }
+        button:hover{
+            cursor: pointer;
+            height: 55px;
+            line-height:55px;
+            box-shadow: 0 0px 0 #254442;
+        }
+        .subtitle{
+            border-bottom:1px solid #333;
+            padding:15px  20px;
+            margin-bottom:15px;
+        }
+        fieldset{
+            padding:15px;
+        }
+        fieldset + fieldset{
+            margin-top:15px;
+        }
+        legend{
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ece0f4;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">px dp sp 单位换算</h1>
+<div class="main">
+    <h2 class="subtitle"></h2>
+    <div class="panel flex">
+        <div class="panel-l">
+            <input class="fbl-w count-ppi-input" type="text" placeholder="请输入分辨率宽度" autofocus>
+            <input class="fbl-h count-ppi-input" type="text" placeholder="请输入分辨率高度">
+            <input class="fbl-yc count-ppi-input" type="text" placeholder="请输入屏幕对角线英寸数">
+        </div>
+        <div class="panel-r">
+            <div class="ppi">
+                <p>PPI</p>
+                <p class="ppi-v">000</p>
+            </div>
+        </div>
+    </div>
+    <button class="ppi-btn" id="count-ppi">计算PPI</button>
+    <div class="panel change-wrap">
+        <fieldset>
+            <legend>dp -> px</legend>
+            <input class="dppx-dp" type="text" placeholder="请输入dp">dp =
+            <input class="dppx-px" type="text" placeholder="请输入分辨率宽度">px
+            <button class="ppi-btn">转化</button>
+        </fieldset>
+        <fieldset>
+            <legend>px -> dp</legend>
+            <input class="dppx-dp" type="text" placeholder="请输入dp">dp =
+            <input class="dppx-px" type="text" placeholder="请输入分辨率宽度">px
+            <button class="ppi-btn">转化</button>
+        </fieldset>
+        <fieldset>
+            <legend>sp -> px</legend>
+            <input class="dppx-dp" type="text" placeholder="请输入dp">dp =
+            <input class="dppx-px" type="text" placeholder="请输入分辨率宽度">px
+            <button class="ppi-btn">转化</button>
+        </fieldset>
+        <fieldset>
+            <legend>px -> sp</legend>
+            <input class="dppx-dp" type="text" placeholder="请输入dp">dp =
+            <input class="dppx-px" type="text" placeholder="请输入分辨率宽度">px
+            <button class="ppi-btn">转化</button>
+        </fieldset>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+    // PPI = √（长度像素数² + 宽度像素数²） / 屏幕对角线英寸数
+            //     <input class="fbl-w count-ppi-input" type="text" placeholder="请输入分辨率宽度" autofocus>
+            // <input class="fbl-h count-ppi-input" type="text" placeholder="请输入分辨率高度">
+            // <input class="fbl-yc count-ppi-input" type="text" placeholder="请输入屏幕对角线英寸数">
+    $('#count-ppi').click(function(){
+        var ppi,
+            screen_width =  $('.fbl-w').val(),
+            screen_height =  $('.fbl-h').val(),
+            screen_diagonal =  $('.fbl-yc').val();
+        console.info(screen_width);
+        if(screen_width == ''  || screen_height == ''   || screen_diagonal == ''  ){
+            alert('完善屏幕信息好吗?');
+            return ;
+        }
+        ppi =Math.sqrt(screen_width*screen_width + screen_height*screen_height) / screen_diagonal;
+        // ppi =(screen_width*screen_width + screen_height*screen_height) / screen_diagonal;
+        $('.ppi-v').html(ppi.toFixed(3));
+    });
+</script>
+</body>
+</html>
